@@ -1,6 +1,26 @@
-import Header from './components/Header'
+import React, { useEffect } from "react"; 
+import Header from "./components/Header"
+import axios from "axios";
+
+const fetchData = () => {
+  return axios
+    .get("https://jsonplaceholder.typicode.com/todos/1")
+    .then((results) => {
+      console.log(results);
+      return results;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
 
 function App() {
+
+useEffect(()=> {
+  fetchData();
+})
+
   return (
     <div className="App">
       <Header />
@@ -8,5 +28,6 @@ function App() {
      </div>
   );
 }
+
 
 export default App;
