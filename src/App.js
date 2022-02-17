@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"; 
 import Header from "./components/Header"
+import Table from "./components/Table"
 import axios from "axios";
 
 const fetchData = () => {
@@ -14,20 +15,19 @@ const fetchData = () => {
     });
 };
 
-
 function App() {
 
 useEffect(()=> {
   fetchData();
 })
-
-  return (
+  
+return (
     <div className="App">
       <Header />
+      <Table />
     
      </div>
   );
 }
-
 
 export default App;
