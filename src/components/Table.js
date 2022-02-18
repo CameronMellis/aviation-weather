@@ -7,29 +7,31 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, time, winddirection, windspeed, visibility, precip, ceiling) {
+  return { name, time, winddirection, windspeed, visibility, precip, ceiling };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('CYYT', 2200, 220, 24, "P6", "FG", "OVC007"),
+  createData('CYQX', 2220, 210, 18, "5", "", "OVC018"),
+  createData('CYDF', 2220, 240, 16, "P6", "", "SKC"),
+  createData('CYJT', 2220, 220, 23, "3", "-RA", "OVC005"),
+  createData('CYYR', 2220, 200, 14, "P6", "", "SKC"),
 ];
 
 export default function DenseTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+    <TableContainer component= {Paper}>
+      <Table sx={{ minWidth: 750 }} size="medium" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Location</TableCell>
+            <TableCell align="right">Time&nbsp;(Z)</TableCell>
+            <TableCell align="right">Wind Direction&nbsp;(T)</TableCell>
+            <TableCell align="right">Wind Speed&nbsp;(kts)</TableCell>
+            <TableCell align="right">Visibility&nbsp;(SM)</TableCell>
+            <TableCell align="right">Precip</TableCell>
+            <TableCell align="right">Ceiling&nbsp;(AGL)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -41,10 +43,12 @@ export default function DenseTable() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.time}</TableCell>
+              <TableCell align="right">{row.winddirection}</TableCell>
+              <TableCell align="right">{row.windspeed}</TableCell>
+              <TableCell align="right">{row.visibility}</TableCell>
+              <TableCell align="right">{row.precip}</TableCell>
+              <TableCell align="right">{row.ceiling}</TableCell>
             </TableRow>
           ))}
         </TableBody>
