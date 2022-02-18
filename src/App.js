@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import Table from "./components/Table"
 import axios from "axios";
 
+
 const fetchData = () => {
   return axios
     .get("https://jsonplaceholder.typicode.com/todos/1")
