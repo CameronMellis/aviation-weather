@@ -24,7 +24,7 @@ useEffect(()=> {
   
 return (
     <div className="App">
-      <Header color="primary"> </Header>
+      <Header> </Header>
       <Table />
     
      </div>
