@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Table from './components/Table';
 import './App.css';
 
-const getAVWX = async (data) => {
+const getAVWX = async () => {
   const headers = { headers: { Authorization: '......' } };
   const response = await fetch(
     'https://jsonplaceholder.typicode.com/todos/1',
