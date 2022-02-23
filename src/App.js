@@ -1,29 +1,26 @@
 import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Table from './components/Table';
-import axios from 'axios';
-import "./App.css";
+import './App.css';
 
-const fetchData = () => {
-  return axios
-    .get('https://jsonplaceholder.typicode.com/todos/1')
-    .then((results) => {
-      console.log(results);
-      return results;
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+const getAVWX = async (data) => {
+  const headers = { headers: { Authorization: '......' } };
+  const response = await fetch(
+    'https://jsonplaceholder.typicode.com/todos/1',
+    headers
+  );
+  console.log(response);
+  return await response.json();
 };
 
 function App() {
   useEffect(() => {
-    fetchData();
+    getAVWX();
   });
 
   return (
     <div className='App'>
-      <Header> </Header>
+      <Header />
       <Table />
     </div>
   );
