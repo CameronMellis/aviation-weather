@@ -3,10 +3,10 @@ import Header from './components/Header';
 import Table from './components/Table';
 import './App.css';
 
-const getAVWX = async () => {
-  const headers = { headers: { Authorization: '......' } };
+const getAVWX = async (data) => {
+  const headers = { headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' } };
   const response = await fetch(
-    'https://jsonplaceholder.typicode.com/todos/1',
+    'https://avwx.rest/api/metar/CYYT?options=&airport=true&reporting=true&format=json&onfail=error',
     headers
   );
   console.log(response);
