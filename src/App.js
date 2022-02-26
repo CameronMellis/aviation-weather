@@ -10,7 +10,7 @@ const getAVWX = async () => {
     headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
   };
   const response = await fetch(
-    'https://avwx.rest/api/metar/EGLL?options=&airport=true&reporting=true&format=json&onfail=error',
+    'https://avwx.rest/api/metar/CYYT',
     headers
   );
   console.log(response);
