@@ -1,18 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Table from './components/Table';
+import Paper from '@mui/material/Paper';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
-import Paper from '@mui/material/Paper';
 
 const getAVWX = async () => {
   const headers = {
     headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
   };
-  const response = await fetch(
-    'https://avwx.rest/api/metar/CYYT',
-    headers
-  );
+  const response = await fetch('https://avwx.rest/api/metar/CYYT', headers);
   console.log(response);
   return await response.json();
 };
@@ -25,6 +22,9 @@ function App() {
   });
   useEffect(() => {
     getAVWX();
+    displayWX();
+
+   
   });
 
   return (

@@ -7,8 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+
 function createData(
   name,
+  location,
   time,
   winddirection,
   windspeed,
@@ -21,6 +23,7 @@ function createData(
 ) {
   return {
     name,
+    location,
     time,
     winddirection,
     windspeed,
@@ -34,11 +37,15 @@ function createData(
 }
 
 const rows = [
-  createData('CYYT', 2200, 220, 24, 'P6', 'FG', 'OVC007', '5', '5', 2985),
-  createData('CYQX', 2220, 210, 18, '5', '', 'OVC018', '4', '7', 2970),
-  createData('CYDF', 2220, 240, 16, 'P6', '', 'SKC', '6', '7', 2972),
-  createData('CYJT', 2220, 220, 23, '3', '-RA', 'OVC005', '2', '2', 2970),
-  createData('CYYR', 2220, 200, 14, 'P6', '', 'SKC', '-5', '0', 2994),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
+  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter)
 ];
 
 export default function DenseTable() {
@@ -48,6 +55,7 @@ export default function DenseTable() {
         <TableHead>
           <TableRow>
             <TableCell>Location</TableCell>
+            <TableCell align='right'>Location</TableCell>
             <TableCell align='right'>Time&nbsp;(Z)</TableCell>
             <TableCell align='right'>Wind Direction&nbsp;(T)</TableCell>
             <TableCell align='right'>Wind Speed&nbsp;(kts)</TableCell>
@@ -68,6 +76,7 @@ export default function DenseTable() {
               <TableCell component='th' scope='row'>
                 {row.name}
               </TableCell>
+              <TableCell align='right'>{row.location}</TableCell>
               <TableCell align='right'>{row.time}</TableCell>
               <TableCell align='right'>{row.winddirection}</TableCell>
               <TableCell align='right'>{row.windspeed}</TableCell>
