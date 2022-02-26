@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Table from './components/Table';
-import Paper from '@mui/material/Paper';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import theme from './components/Theme';
+import { ThemeProvider } from '@mui/material/styles';
 import './App.css';
 
 const getAVWX = async () => {
+  /*const [metars, setMetars] = useState(null);
+  setMetars(response.data);*/
   const headers = {
     headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
   };
@@ -15,26 +17,16 @@ const getAVWX = async () => {
 };
 
 function App() {
-  const theme = createTheme({
-    palette: {
-      type: 'dark',
-    },
-  });
   useEffect(() => {
     getAVWX();
-    displayWX();
-
-   
   });
 
   return (
     <ThemeProvider theme={theme}>
-      <Paper style={{ height: '100vh' }}>
-        <div className='App'>
-          <Header />
-          <Table />
-        </div>
-      </Paper>
+      <div className='App'>
+        <Header />
+        <Table />
+      </div>
     </ThemeProvider>
   );
 }

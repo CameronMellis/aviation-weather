@@ -7,8 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
-function createData(
+function createMetars(
   name,
   location,
   time,
@@ -36,17 +35,7 @@ function createData(
   };
 }
 
-const rows = [
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter),
-  createData(location, time, winddirection, windspeed, visibility, precip, ceiling, temp, dewpoint, altimeter)
-];
+const rows = [];
 
 export default function DenseTable() {
   return (
