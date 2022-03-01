@@ -11,7 +11,7 @@ const theme = createTheme({
   },
 });
 
-const GetAVWX = () => {
+function App() {
   const [metars, setMetars] = useState([]);
 
   const fetchData = async () => {
@@ -21,21 +21,17 @@ const GetAVWX = () => {
     const response = await fetch('https://avwx.rest/api/metar/CYYT', headers);
     const data = await response.json();
     console.log(data);
-    setMetars(data);
+    setMetars([data]);
   };
   useEffect(() => {
     fetchData();
   }, []);
-};
-
-function App() {
-  GetAVWX();
 
   return (
     <ThemeProvider theme={theme}>
       <div className='App'>
         <Header />
-        <Table />
+        <Table data={metars} />
       </div>
       <Button color='primary' variant='contained'>
         Test Button
