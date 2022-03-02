@@ -15,6 +15,7 @@ export default function DenseTable(props) {
         <TableHead>
           <TableRow>
             <TableCell align='right'>Location</TableCell>
+            <TableCell align='right'>Flight Rules</TableCell>
             <TableCell align='right'>Time&nbsp;(Z)</TableCell>
             <TableCell align='right'>Wind Direction&nbsp;(T)</TableCell>
             <TableCell align='right'>Wind Speed&nbsp;(kts)</TableCell>
@@ -32,14 +33,15 @@ export default function DenseTable(props) {
               key={row.location}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell align='right'>{row.location}</TableCell>
-              <TableCell align='right'>{row.time.repr}</TableCell>
-              <TableCell align='right'>{row.winddirection}</TableCell>
-              <TableCell align='right'>{row.windspeed}</TableCell>
+              <TableCell align='right'>{row.station}</TableCell>
+              <TableCell align='right'>{row.flight_rules}</TableCell>
+              <TableCell align='right'>{row.time.dt}</TableCell>
+              <TableCell align='right'>{row.wind_direction.repr}</TableCell>
+              <TableCell align='right'>{row.wind_speed.repr}</TableCell>
               <TableCell align='right'>{row.visibility.repr}</TableCell>
               <TableCell align='right'>{row.precip}</TableCell>
-              <TableCell align='right'>{row.ceiling}</TableCell>
-              <TableCell align='right'>{row.temp}</TableCell>
+              <TableCell align='right'>{row.clouds.repr}</TableCell>
+              <TableCell align='right'>{row.temperature.repr}</TableCell>
               <TableCell align='right'>{row.dewpoint.repr}</TableCell>
               <TableCell align='right'>{row.altimeter.repr}</TableCell>
             </TableRow>
