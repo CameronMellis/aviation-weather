@@ -18,8 +18,11 @@ function App() {
     const headers = {
       headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
     };
-    const response = await fetch('https://avwx.rest/api/metar/CYHZ', headers);
-    const data = await response.json();
+    const data = await Promise.all([
+      fetch('https://avwx.rest/api/metar/CYYT', headers).then((response) => response.json()),
+      fetch('https://avwx.rest/api/metar/CYQX', headers).then((response) => response.json()),
+      fetch('https://avwx.rest/api/metar/CYDF', headers).then((response) => response.json()),
+    ]);
     console.log(data);
     setMetars([data]);
   };
