@@ -15,16 +15,16 @@ export default function DenseTable(props) {
         <TableHead>
           <TableRow>
             <TableCell align='center'>Location</TableCell>
-            <TableCell align='right'>Flight Rules</TableCell>
+            <TableCell align='center'>Flight Rules</TableCell>
             <TableCell align='center'>Time&nbsp;(Z)</TableCell>
-            <TableCell align='right'>Wind Direction&nbsp;(T)</TableCell>
-            <TableCell align='right'>Wind Speed&nbsp;(kts)</TableCell>
-            <TableCell align='right'>Visibility&nbsp;(SM)</TableCell>
-            <TableCell align='right'>Precip</TableCell>
-            <TableCell align='right'>Ceiling&nbsp;(AGL)</TableCell>
-            <TableCell align='right'>Temp&nbsp;(C)</TableCell>
-            <TableCell align='right'>Dewpoint</TableCell>
-            <TableCell align='right'>Altimeter&nbsp;(inHg)</TableCell>
+            <TableCell align='center'>Wind Direction&nbsp;(T)</TableCell>
+            <TableCell align='center'>Wind Speed&nbsp;(kts)</TableCell>
+            <TableCell align='center'>Visibility&nbsp;(SM)</TableCell>
+            <TableCell align='center'>Precip</TableCell>
+            <TableCell align='center'>Ceiling&nbsp;(AGL)</TableCell>
+            <TableCell align='center'>Temp&nbsp;(C)</TableCell>
+            <TableCell align='center'>Dewpoint</TableCell>
+            <TableCell align='center'>Altimeter&nbsp;(inHg)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -38,7 +38,7 @@ export default function DenseTable(props) {
               <TableCell align='center'>{row.time.dt}</TableCell>
               <TableCell align='center'>{row.wind_direction.repr}</TableCell>
               <TableCell align='center'>{row.wind_speed.repr}</TableCell>
-              <TableCell align='center'>{row.visibility.repr}</TableCell>
+              <TableCell align='center'>{row.visibility.value}</TableCell>
               <TableCell align='center'>{row.precip}</TableCell>
               <TableCell align='center'>{row.clouds.repr}</TableCell>
               <TableCell align='center'>{row.temperature.repr}</TableCell>

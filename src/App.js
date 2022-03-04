@@ -18,7 +18,7 @@ function App() {
     const headers = {
       headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
     };
-    const response = await fetch('https://avwx.rest/api/metar/CYYT', headers);
+    const response = await fetch('https://avwx.rest/api/metar/CYHZ', headers);
     const data = await response.json();
     console.log(data);
     setMetars([data]);
