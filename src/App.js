@@ -5,9 +5,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import './App.css';
 
-const theme = createTheme({
+const darkTheme = createTheme({
   palette: {
-    type: 'dark',
+    mode: 'dark',
   },
 });
 
@@ -20,8 +20,11 @@ function App() {
     };
     const data = await Promise.all([
       fetch('https://avwx.rest/api/metar/CYYT', headers).then((response) => response.json()),
+      fetch('https://avwx.rest/api/taf/CYYT', headers).then((response) => response.json()),
       fetch('https://avwx.rest/api/metar/CYQX', headers).then((response) => response.json()),
+      fetch('https://avwx.rest/api/taf/CYQX', headers).then((response) => response.json()),
       fetch('https://avwx.rest/api/metar/CYDF', headers).then((response) => response.json()),
+      fetch('https://avwx.rest/api/taf/CYDF', headers).then((response) => response.json()),
     ]);
     console.log(data);
     setMetars(data);
@@ -31,13 +34,13 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       <div className='App'>
-        <Header />
-        <Table data={metars} />
+      <Header />
+      <Table data={metars} />
       </div>
-      <Button color='primary' variant='contained'>
-        Test Button
+      <Button onClick={() => window.location.reload(false)} color='primary' variant='contained'>
+        Refresh
       </Button>
     </ThemeProvider>
   );
