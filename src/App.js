@@ -24,7 +24,7 @@ function App() {
       fetch('https://avwx.rest/api/metar/CYDF', headers).then((response) => response.json()),
     ]);
     console.log(data);
-    setMetars([data]);
+    setMetars(data);
   };
   useEffect(() => {
     fetchData();

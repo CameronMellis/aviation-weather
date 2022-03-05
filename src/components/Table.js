@@ -21,7 +21,7 @@ export default function DenseTable(props) {
         <TableBody>
           {props.data.map((row) => (
             <TableRow
-              key={row}
+              key={row.station}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell align='center'>{row.flight_rules}</TableCell>
               <TableCell align='left'>{row.raw}</TableCell>
