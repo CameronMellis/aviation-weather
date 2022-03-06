@@ -4,7 +4,7 @@ import Table from './components/Table';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import './App.css';
-import Typography from '@mui/material/Typography';
+import notams from 'notams';
 
 const darkTheme = createTheme({
   palette: {
@@ -14,6 +14,10 @@ const darkTheme = createTheme({
 
 function App() {
   const [metars, setMetars] = useState([]);
+
+  notams.fetch(['PADK', 'PADU'], { format: 'DOMESTIC' }).then((results) => {
+    console.log(JSON.stringify(results, null, 2));
+  });
 
   const fetchData = async () => {
     const headers = {
@@ -52,11 +56,7 @@ function App() {
         <Header />
         <Table data={metars} />
       </div>
-      <Button
-        onClick={() => window.location.reload(false)}
-        color='primary'
-        variant='contained'
-      >
+      <Button onClick={() => fetchData()} color='primary' variant='contained'>
         Refresh
       </Button>
     </ThemeProvider>
