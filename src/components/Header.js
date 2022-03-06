@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <h1>Aviation Weather</h1>
+      <h1></h1>
     </header>
   );
 };

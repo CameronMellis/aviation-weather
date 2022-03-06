@@ -20,7 +20,7 @@ export default function DenseTable(props) {
   console.log(props);
   return (
     <ThemeProvider theme={theme}>
-    <TableContainer sx={{ width: '100%', maxWidth: 800 }}  component={Paper}>
+    <TableContainer sx={{ width: '100%', maxWidth: 800, }}  component={Paper}>
       <Typography variant="body1" component="div" gutterBottom>
       <Table size='med' aria-label='a dense table'>
         <TableHead>
@@ -33,9 +33,9 @@ export default function DenseTable(props) {
           {props.data.map((row) => (
             <TableRow
               key={row.raw}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 },  }}>
+              sx={{ '&:last-child td, &:last-child th': { border: 0 }, }}>
               <TableCell align='center'>{row.flight_rules}</TableCell>
-              <TableCell align='left'>{row.raw}</TableCell>
+              <TableCell colSpan={0} align='left'>{row.raw}</TableCell>
             </TableRow>
           ))}
         </TableBody>
