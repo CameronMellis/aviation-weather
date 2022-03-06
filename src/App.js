@@ -12,6 +12,12 @@ const darkTheme = createTheme({
 });
 
 function App() {
+
+  var notams = require('notams');
+  notams(['PADK', 'PADU'], { format: 'DOMESTIC' }).then(results => {
+    console.log(results)
+  })
+
   const [metars, setMetars] = useState([]);
 
   const fetchData = async () => {
