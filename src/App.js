@@ -15,7 +15,7 @@ const darkTheme = createTheme({
 function App() {
   const [metars, setMetars] = useState([]);
 
-  notams.fetch(['PADK', 'PADU'], { format: 'DOMESTIC' }).then((results) => {
+  notams.fetch(['CYYT', 'CYQX'], { format: 'DOMESTIC' }).then((results) => {
     console.log(JSON.stringify(results, null, 2));
   });
 
