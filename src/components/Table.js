@@ -15,6 +15,7 @@ const theme = createTheme({
   },
 });
 
+
 export default function DenseTable(props) {
   console.log(props);
   return (
@@ -37,12 +38,6 @@ export default function DenseTable(props) {
                   sx={{ fontSize: 15, fontWeight: 'bold' }}
                   align='left'
                 >
-                  Station
-                </TableCell>
-                <TableCell
-                  sx={{ fontSize: 15, fontWeight: 'bold' }}
-                  align='left'
-                >
                   METAR/TAF
                 </TableCell>
               </TableRow>
@@ -51,8 +46,7 @@ export default function DenseTable(props) {
               {props.data.map((row) => (
                 <TableRow key={row.raw} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell sx={{ fontSize: 15, fontWeight: 'bold' }} align='center'> {row.flight_rules}</TableCell>
-                  <TableCell sx={{ fontSize: 15, fontWeight: 'bold' }} align='left'>{row.station}</TableCell>
-                  <TableCell align='left'>{row.raw}</TableCell>
+                  <TableCell sx={{ fontSize: 14, fontWeight: 'medium' }} align='left'>{row.raw}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
