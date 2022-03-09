@@ -13,6 +13,7 @@ const darkTheme = createTheme({
 });
 
 function App() {
+
   const [metars, setMetars] = useState([]);
 
   notams.fetch(['CYYT', 'CYQX'], { format: 'DOMESTIC' }).then((results) => {
