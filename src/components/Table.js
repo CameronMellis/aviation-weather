@@ -15,21 +15,18 @@ const theme = createTheme({
   },
 });
 
-
-
-
 export default function DenseTable(props) {
   console.log(props);
 return (
     <ThemeProvider theme={theme}>
       <TableContainer
-        sx={{ width: '100%', maxWidth: 700, fontSize: '15px' }}
-        component={Paper}
+        sx={{ width: '100%', maxWidth: 650, fontSize: '15px', backgroundColor: '#eeffff' }}
+        component={Paper} className='Table'
       >
         <Typography variant='body1' component='div' gutterBottom>
           <Table size='med' aria-label='a dense table'>
             <TableHead>
-              <TableRow>
+              <TableRow sx={{ backgroundColor: '#bbdefb'}}>
                 <TableCell
                   sx={{ fontSize: 15, fontWeight: 'bold' }}
                   align='center'
@@ -47,8 +44,8 @@ return (
             <TableBody>
               {props.data.map((row) => (
                 <TableRow key={row.raw} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                  <TableCell sx={{ fontSize: 15, fontWeight: 'bold' }} align='center'> {row.flight_rules}</TableCell>
-                  <TableCell sx={{ fontSize: 14, fontWeight: 'medium' }} align='left'>{row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
+                  <TableCell sx={{ fontSize: 15, fontWeight: 'bold', backgroundColor: '#bbdefb' }} align='center'> {row.flight_rules}</TableCell>
+                  <TableCell sx={{ fontSize: 14, fontWeight: 'medium' }} align='left' >{row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
                     return "\n" + oldValue})}</TableCell>
                 </TableRow>
               ))}

@@ -13,7 +13,7 @@ const darkTheme = createTheme({
 });
 
 function App() {
-  
+
   /*notams.fetch(['PADK', 'PADU'], { format: 'DOMESTIC' }).then((results) => {
     console.log(JSON.stringify(results, null, 2));
   });*/
@@ -54,9 +54,14 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <div className='App'>
         <Header />
-        <Table data={metars} />
+        <Table className='Table' data={metars} />
       </div>
-      <Button onClick={() => fetchData()} color='primary' variant='contained'>
+
+      <div>
+        <img  className='GFA' src="https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_012.png" alt="GFA 34"/>
+        <img  className='GFA' src="https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_012.png" alt="GFA 34 Icing and Turbulence" />
+      </div>
+      <Button  className='Button' onClick={() => fetchData()} color='primary' variant='contained'>
         Refresh
       </Button>
     </ThemeProvider>
