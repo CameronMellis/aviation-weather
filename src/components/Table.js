@@ -9,16 +9,18 @@ import Paper from '@mui/material/Paper';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
-
 const theme = createTheme({
   palette: {
     type: 'dark',
   },
 });
 
+
+
+
 export default function DenseTable(props) {
   console.log(props);
-  return (
+return (
     <ThemeProvider theme={theme}>
       <TableContainer
         sx={{ width: '100%', maxWidth: 700, fontSize: '15px' }}
@@ -46,7 +48,8 @@ export default function DenseTable(props) {
               {props.data.map((row) => (
                 <TableRow key={row.raw} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell sx={{ fontSize: 15, fontWeight: 'bold' }} align='center'> {row.flight_rules}</TableCell>
-                  <TableCell sx={{ fontSize: 14, fontWeight: 'medium' }} align='left'>{row.raw}</TableCell>
+                  <TableCell sx={{ fontSize: 14, fontWeight: 'medium' }} align='left'>{row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
+                    return "\n" + oldValue})}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

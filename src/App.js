@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import './App.css';
 import notams from 'notams';
+import { parse } from 'superagent';
 
 const darkTheme = createTheme({
   palette: {
@@ -14,12 +15,34 @@ const darkTheme = createTheme({
 
 function App() {
 
+  const PILOTWEB_BASE_URL = 'https://pilotweb.nas.faa.gov/PilotWeb'
+  const superagent = require('superagent') 
+
+  notams.fetch = async (icaos, options = {}) => {
+    const formatType = options.format || 'ICAO'
+  
+    if (Array.isArray(icaos)) {
+      icaos = icaos.join(',')
+    }
+  
+    const response = await superagent
+      .get(`${PILOTWEB_BASE_URL}/notamRetrievalByICAOAction.do`)
+      .query({
+        reportType: 'RAW',
+        mode: 'no-cors',
+        method: 'displayByICAOs',
+        actionType: 'notamRetrievalByICAOs',
+        retrieveLocId: icaos,
+        formatType
+      })
+    return parse(response.text)
+  }
+
+  notams.fetch([ 'PADK', 'PADU' ], { format: 'DOMESTIC' }).then(results => {
+    console.log(JSON.stringify(results, null, 2))
+  })
+
   const [metars, setMetars] = useState([]);
-
-  notams.fetch(['CYYT', 'CYQX'], { format: 'DOMESTIC' }).then((results) => {
-    console.log(JSON.stringify(results, null, 2));
-  });
-
   const fetchData = async () => {
     const headers = {
       headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
@@ -50,12 +73,13 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
+  
 
   return (
     <ThemeProvider theme={darkTheme}>
       <div className='App'>
         <Header />
-        <Table data={metars} />
+        <Table  data={metars} />
       </div>
       <Button onClick={() => fetchData()} color='primary' variant='contained'>
         Refresh
