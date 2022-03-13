@@ -20,13 +20,13 @@ export default function DenseTable(props) {
 return (
     <ThemeProvider theme={theme}>
       <TableContainer
-        sx={{ width: '100%', maxWidth: 650, fontSize: '15px', backgroundColor: '#90caf9' }}
+        sx={{ width: '100%', maxWidth: 650, fontSize: '15px', backgroundColor: '#1c313a' }}
         component={Paper} className='Table'
       >
         <Typography variant='body1' component='div' gutterBottom>
           <Table size='med' aria-label='a dense table'>
             <TableHead>
-              <TableRow sx={{ backgroundColor: '#90caf9'}}>
+              <TableRow sx={{ backgroundColor: '#455a64'}}>
                 <TableCell
                   sx={{ fontSize: 15, fontWeight: 'bold' }}
                   align='center'
@@ -44,8 +44,8 @@ return (
             <TableBody>
               {props.data.map((row) => (
                 <TableRow key={row.raw} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                  <TableCell sx={{ fontSize: 15, fontWeight: 'bold', backgroundColor: '#90caf9' }} align='center'> {row.flight_rules}</TableCell>
-                  <TableCell sx={{ fontSize: 14, fontWeight: 'medium', backgroundColor: '#bbdefb' }} align='left' >{row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
+                  <TableCell sx={{ fontSize: 15, fontWeight: 'bold', backgroundColor: '#455a64' }} align='center'> {row.flight_rules}</TableCell>
+                  <TableCell sx={{ fontSize: 14, fontWeight: 'medium', backgroundColor: '#718792' }} align='left' >{row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
                     return "\n" + oldValue})}</TableCell>
                 </TableRow>
               ))}
