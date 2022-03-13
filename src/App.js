@@ -4,7 +4,7 @@ import Table from './components/Table';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import './App.css';
-/*import notams from 'notams';*/
+
 
 const darkTheme = createTheme({
   palette: {
@@ -14,12 +14,12 @@ const darkTheme = createTheme({
 
 function App() {
 
-  /*notams.fetch(['PADK', 'PADU'], { format: 'DOMESTIC' }).then((results) => {
-    console.log(JSON.stringify(results, null, 2));
-  });*/
-
+  
+  
   const [metars, setMetars] = useState([]);
   const fetchData = async () => {
+    const response = fetch('http://localhost:3000/weather/api/alpha/?point=CYYT%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823')
+    console.log(await(await response).json())
     const headers = {
       headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
     };
