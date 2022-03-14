@@ -14,8 +14,8 @@ const darkTheme = createTheme({
 function App() {
   const [metars, setMetars] = useState([]);
   const fetchData = async () => {
-    /*const response = fetch('http://localhost:3000/weather/api/alpha/?point=CYYT%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823')
-    console.log(await(await response).json())*/
+    const response = fetch('http://localhost:3000/api/weather/api/alpha/?point=CYYT%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823')
+    console.log(await(await response).json())
     const headers = {
       headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
     };
