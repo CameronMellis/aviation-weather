@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Table from './components/Table';
 import NavBar from './components/NavBar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Button from '@mui/material/Button';
 import './App.css';
 
 const darkTheme = createTheme({
