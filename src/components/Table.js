@@ -21,23 +21,20 @@ return (
     <ThemeProvider theme={theme}>
       <TableContainer
         sx={{ width: '100%', maxWidth: 650, fontSize: '15px', backgroundColor: '#1c313a' }}
-        component={Paper} className='Table'
-      >
+        component={Paper} className='Table'>
         <Typography variant='body1' component='div' gutterBottom>
           <Table size='med' aria-label='a dense table'>
             <TableHead>
               <TableRow sx={{ backgroundColor: '#455a64'}}>
                 <TableCell
                   sx={{ fontSize: 15, fontWeight: 'bold' }}
-                  align='center'
-                >
+                  align='center'>
                   Flight Rules
                 </TableCell>
                 <TableCell
-                  sx={{ fontSize: 15, fontWeight: 'bold' }}
-                  align='left'
-                >
-                  METAR/TAF
+                  sx={{ fontSize: 15, fontWeight: 'bold'}}
+                  align='left'>
+                  METAR/TAF/
                 </TableCell>
               </TableRow>
             </TableHead>
