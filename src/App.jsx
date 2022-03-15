@@ -14,12 +14,12 @@ const darkTheme = createTheme({
 function App() {
   const [avwx, setAvwx] = useState([]);
   const fetchData = async () => {
-    const response = fetch('http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823')
-    console.log(await(await response).json())
+    /*const response = fetch('http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823')
+    console.log(await(await response).json())*/
     const headers = {
       headers: { Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg' },
     };
-    const data = await Promise.all([
+    const wxdata = await Promise.all([
       fetch('https://avwx.rest/api/metar/CYYT', headers).then((response) =>
         response.json()
       ),
@@ -57,8 +57,8 @@ function App() {
         response.json()
       ),
     ]);
-    console.log(data);
-    setAvwx(data);
+    console.log(wxdata);
+    setAvwx(wxdata);
   };
   useEffect(() => {
     fetchData();

@@ -53,7 +53,7 @@ return (
                 <TableCell
                   sx={{ fontSize: 15, fontWeight: 'bold'}}
                   align='left'>
-                  METAR/TAF/
+                  METAR/TAF
                 </TableCell>
               </TableRow>
             </TableHead>

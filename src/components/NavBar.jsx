@@ -4,6 +4,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FlightIcon from '@mui/icons-material/Flight';
+import AnnouncementIcon from '@mui/icons-material/Announcement';
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
@@ -15,10 +16,10 @@ export default function SimpleBottomNavigation() {
         bottom: 0,
         left: 0,
         right: 0,
-      }}
+       }}
       elevation={2}
     >
-      <BottomNavigation
+      <BottomNavigation sx={{ height: 50 }}
         showLabels
         value={value}
         onChange={(event, newValue) => {
@@ -29,6 +30,7 @@ export default function SimpleBottomNavigation() {
         <BottomNavigationAction label='YYT' icon={<FlightIcon />} />
         <BottomNavigationAction label='YUL' icon={<FlightIcon />} />
         <BottomNavigationAction label='YHZ' icon={<FlightIcon />} />
+        <BottomNavigationAction label='NOTAMS' icon={<AnnouncementIcon />} />
       </BottomNavigation>
     </Box>
   );
