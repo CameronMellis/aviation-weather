@@ -26,7 +26,7 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label='Refresh' icon={<AutorenewIcon />} />
+        <BottomNavigationAction label='Refresh'  onClick={() => this.fetchData()} icon={<AutorenewIcon />}  />
         <BottomNavigationAction label='YYT' icon={<FlightIcon />} />
         <BottomNavigationAction label='YUL' icon={<FlightIcon />} />
         <BottomNavigationAction label='YHZ' icon={<FlightIcon />} />
