@@ -16,7 +16,7 @@ export default function SimpleBottomNavigation() {
         left: 0,
         right: 0,
       }}
-      elevation={5}
+      elevation={2}
     >
       <BottomNavigation
         showLabels
