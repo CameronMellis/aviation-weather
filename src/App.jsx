@@ -12,7 +12,7 @@ const darkTheme = createTheme({
 });
 
 function App() {
-  const [metars, setMetars] = useState([]);
+  const [avwx, setAvwx] = useState([]);
   const fetchData = async () => {
     const response = fetch('http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823')
     console.log(await(await response).json())
@@ -58,7 +58,7 @@ function App() {
       ),
     ]);
     console.log(data);
-    setMetars(data);
+    setAvwx(data);
   };
   useEffect(() => {
     fetchData();
@@ -68,7 +68,7 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <div className='App'>
         <Header />
-        <Table className='Table' data={metars} />
+        <Table className='Table' data={avwx} />
       </div>
 
       <div>
