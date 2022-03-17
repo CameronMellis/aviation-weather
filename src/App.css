@@ -6,7 +6,6 @@
 
 .GFA {
   padding-right: 10px;
-  padding-bottom: 5px;
   float: right;
 }
 
@@ -15,6 +14,6 @@
   float: left;
 }
 
-.Button {
-  float: bottom;
+.Buttons {
+  padding: 20px;
 }
