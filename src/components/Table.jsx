@@ -63,7 +63,7 @@ return (
                   <SubHeader flight_rules={row.flight_rules}></SubHeader>
                   <TableCell sx={{ fontSize: 16, fontWeight: 'medium', backgroundColor: '#8e8e8e' }} align='left' >{row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
                     return "\n" + oldValue})}</TableCell>
-                </TableRow>
+                    </TableRow>
               ))}
             </TableBody>
           </Table>
