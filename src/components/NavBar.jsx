@@ -8,6 +8,9 @@ import AnnouncementIcon from '@mui/icons-material/Announcement';
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
+  const handleClick = () =>{
+    window.location.reload();
+  }
 
   return (
     <Box
@@ -26,7 +29,7 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label='Refresh' onClick={() => this.props.fetchData()}  icon={<AutorenewIcon  />}  />
+        <BottomNavigationAction label='Refresh' onClick={handleClick} icon={<AutorenewIcon  />}  />
         <BottomNavigationAction label='YYT' icon={<FlightIcon />} />
         <BottomNavigationAction label='YUL' icon={<FlightIcon />} />
         <BottomNavigationAction label='YHZ' icon={<FlightIcon />} />
