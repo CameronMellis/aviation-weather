@@ -80,9 +80,9 @@ function App() {
           src='https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_006.png'
           alt='GFA 34'
         />
-        <Button sx={{ m: 1, ml: 2, width: 240, color: "primary" }}  className="Buttons" variant="contained" size="med">0000Z</Button>
-        <Button sx={{ m: 1, width: 240  }}  className="Buttons" variant="contained" size="med">0600Z</Button>
-        <Button sx={{ m: 1, width: 240  }}  className="Buttons" variant="contained" size="med">1200Z</Button>
+        <Button sx={{ m: 1, ml: 5, width: 220 }}  className="Buttons" variant="contained" size="med">0000Z</Button>
+        <Button sx={{ m: 1, width: 220  }}  className="Buttons" variant="contained" size="med">0600Z</Button>
+        <Button sx={{ m: 1, width: 220  }}  className="Buttons" variant="contained" size="med">1200Z</Button>
         <img
           className='GFA'
           id="GfaIcing"
