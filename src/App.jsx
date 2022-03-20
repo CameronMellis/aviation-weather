@@ -66,7 +66,7 @@ function App() {
     fetchData();
   }, []);
 
-  const midnight = 'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_000.png'
+  /*const midnight = 'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_000.png'
   const six = 'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_006.png'
   const twelve = 'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_012.png'
   const forecasts = { midnight, six, twelve }
@@ -74,7 +74,7 @@ function App() {
   const Forecasts = () =>{
     const [selected, setSelected] = useState(forecast.six)
   };
-  
+  */
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -87,10 +87,10 @@ function App() {
         <img
           className='GFA'
           id="GfaClouds"
-          src={selected}
+          /*src={selected}*/
           alt='GFA 34'
         />
-        <Button sx={{ m: 1, ml: 5, width: 220 }}  className="Buttons" variant="contained" size="med" onClick={() => setSelected(forecast.midnight)}>0000Z</Button>
+        <Button sx={{ m: 1, ml: 5, width: 220 }}  className="Buttons" variant="contained" size="med" /*onClick={() => setSelected(forecast.midnight)}*/>0000Z</Button>
         <Button sx={{ m: 1, width: 220  }}  className="Buttons" variant="contained" size="med">0600Z</Button>
         <Button sx={{ m: 1, width: 220  }}  className="Buttons" variant="contained" size="med">1200Z</Button>
         <img
