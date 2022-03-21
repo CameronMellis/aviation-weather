@@ -6,7 +6,7 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FlightIcon from '@mui/icons-material/Flight';
 import AnnouncementIcon from '@mui/icons-material/Announcement';
 
-export default function SimpleBottomNavigation() {
+export default function NavBar({onSelect}) {
   const [value, setValue] = React.useState(0);
   const handleClick = () =>{
     window.location.reload();
@@ -30,8 +30,8 @@ export default function SimpleBottomNavigation() {
         }}
       >
         <BottomNavigationAction label='Refresh' onClick={handleClick} icon={<AutorenewIcon  />}  />
-        <BottomNavigationAction label='YYT' icon={<FlightIcon />} />
-        <BottomNavigationAction label='YUL' icon={<FlightIcon />} />
+        <BottomNavigationAction label='YYT' onClick={() => onSelect('YYT')} icon={<FlightIcon />} />
+        <BottomNavigationAction label='YUL' onClick={() => onSelect('YUL')} icon={<FlightIcon />} />
         <BottomNavigationAction label='YHZ' icon={<FlightIcon />} />
         <BottomNavigationAction label='NOTAMS' icon={<AnnouncementIcon />} />
       </BottomNavigation>
