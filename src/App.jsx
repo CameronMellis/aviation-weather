@@ -97,29 +97,29 @@ function App() {
       <div>
         <img className='GFA' id='GfaClouds' src={selected} alt='GFA 34' />
         <Button
-          sx={{ m: 1, ml: 5, width: 220 }}
+          sx={{ m: 1, ml: 3, width: 227 }}
           className='Buttons'
           variant='contained'
-          size='med'
+          size='small'
           onClick={() => {setSelected(forecast.midnight); setSelectedIce(forecast.midnightIce)}}
     
         >
          Issued 0000Z
         </Button>
         <Button
-          sx={{ m: 1, width: 220 }}
+          sx={{ m: 1, width: 227 }}
           className='Buttons'
           variant='contained'
-          size='med'
+          size='small'
           onClick={() => {setSelected(forecast.six); setSelectedIce(forecast.sixIce)}} 
         >
           Issued 0600Z
         </Button>
         <Button
-          sx={{ m: 1, width: 220 }}
+          sx={{ m: 1, width: 227 }}
           className='Buttons'
           variant='contained'
-          size='med'
+          size='small'
           onClick={() => {setSelected(forecast.twelve); setSelectedIce(forecast.twelveIce)}}
         >
           Issued 1200Z

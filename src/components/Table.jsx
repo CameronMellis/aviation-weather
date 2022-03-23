@@ -39,7 +39,7 @@ export default function DenseTable(props) {
 return (
     <ThemeProvider theme={theme}>
       <TableContainer
-        sx={{ width: '100%', maxWidth: 650, maxHeight: 1220, fontSize: '15px', backgroundColor: '#616161' }}
+        sx={{ width: '100%', maxWidth: 650, maxHeight: 1205, fontSize: '15px', backgroundColor: '#616161' }}
         component={Paper} className='Table'>
         <Typography variant='body1' component='div' gutterBottom>
           <Table size='small' aria-label='a dense table'>
