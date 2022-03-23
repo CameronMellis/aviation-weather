@@ -103,6 +103,7 @@ function App() {
           className='Buttons'
           variant='contained'
           size='med'
+          onClick={() => setSelected(forecast.six)}
         >
           0600Z
         </Button>
@@ -111,13 +112,14 @@ function App() {
           className='Buttons'
           variant='contained'
           size='med'
+          onClick={() => setSelected(forecast.twelve)}
         >
           1200Z
         </Button>
         <img
           className='GFA'
           id='GfaIcing'
-          src='https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_006.png'
+          src={selected}
           alt='GFA 34 Icing and Turbulence'
         />
       </div>
