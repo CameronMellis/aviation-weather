@@ -18,7 +18,13 @@ const six =
   'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_006.png';
 const twelve =
   'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_012.png';
-const forecast = { midnight, six, twelve };
+const midnightIce =
+  'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_000.png';
+const sixIce =
+  'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_006.png';
+const twelveIce =
+  'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_012.png';
+const forecast = { midnight, six, twelve, midnightIce, sixIce, twelveIce };
 
 function App() {
   const [location, setLocation] = useState('YYT');
@@ -80,6 +86,7 @@ function App() {
   }, [location]);
 
   const [selected, setSelected] = useState(forecast.six);
+  const [selectedIce, setSelectedIce] = useState(forecast.sixIce);
   return (
     <ThemeProvider theme={darkTheme}>
       <div className='App'>
@@ -94,32 +101,33 @@ function App() {
           className='Buttons'
           variant='contained'
           size='med'
-          onClick={() => setSelected(forecast.midnight)}
+          onClick={() => {setSelected(forecast.midnight); setSelectedIce(forecast.midnightIce)}}
+    
         >
-          0000Z
+         Issued 0000Z
         </Button>
         <Button
           sx={{ m: 1, width: 220 }}
           className='Buttons'
           variant='contained'
           size='med'
-          onClick={() => setSelected(forecast.six)}
+          onClick={() => {setSelected(forecast.six); setSelectedIce(forecast.sixIce)}} 
         >
-          0600Z
+          Issued 0600Z
         </Button>
         <Button
           sx={{ m: 1, width: 220 }}
           className='Buttons'
           variant='contained'
           size='med'
-          onClick={() => setSelected(forecast.twelve)}
+          onClick={() => {setSelected(forecast.twelve); setSelectedIce(forecast.twelveIce)}}
         >
-          1200Z
+          Issued 1200Z
         </Button>
         <img
           className='GFA'
           id='GfaIcing'
-          src={selected}
+          src={selectedIce}
           alt='GFA 34 Icing and Turbulence'
         />
       </div>
