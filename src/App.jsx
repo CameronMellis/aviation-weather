@@ -6,11 +6,17 @@ import Button from '@mui/material/Button';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
 
-const darkTheme = createTheme({
+const Theme = createTheme({
   palette: {
     mode: 'dark',
   },
 });
+
+const getURLs = (location) => {
+  switch (location) {
+      
+  }
+} 
 
 const midnight =
   'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_000.png';
@@ -30,7 +36,7 @@ function App() {
   const [location, setLocation] = useState('YYT');
   const [avwx, setAvwx] = useState([]);
   useEffect(() => {
-    console.log(location)
+    console.log(location);
     const fetchData = async () => {
       /*const response = fetch(
         'http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823'
@@ -88,7 +94,7 @@ function App() {
   const [selected, setSelected] = useState(forecast.six);
   const [selectedIce, setSelectedIce] = useState(forecast.sixIce);
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={Theme}>
       <div className='App'>
         <Header />
         <Table className='Table' data={avwx} />
@@ -101,17 +107,22 @@ function App() {
           className='Buttons'
           variant='contained'
           size='small'
-          onClick={() => {setSelected(forecast.midnight); setSelectedIce(forecast.midnightIce)}}
-    
+          onClick={() => {
+            setSelected(forecast.midnight);
+            setSelectedIce(forecast.midnightIce);
+          }}
         >
-         Issued 0000Z
+          Issued 0000Z
         </Button>
         <Button
           sx={{ m: 1, width: 227 }}
           className='Buttons'
           variant='contained'
           size='small'
-          onClick={() => {setSelected(forecast.six); setSelectedIce(forecast.sixIce)}} 
+          onClick={() => {
+            setSelected(forecast.six);
+            setSelectedIce(forecast.sixIce);
+          }}
         >
           Issued 0600Z
         </Button>
@@ -120,7 +131,10 @@ function App() {
           className='Buttons'
           variant='contained'
           size='small'
-          onClick={() => {setSelected(forecast.twelve); setSelectedIce(forecast.twelveIce)}}
+          onClick={() => {
+            setSelected(forecast.twelve);
+            setSelectedIce(forecast.twelveIce);
+          }}
         >
           Issued 1200Z
         </Button>

@@ -32,7 +32,7 @@ export default function NavBar({onSelect}) {
         <BottomNavigationAction label='Refresh' onClick={handleClick} icon={<AutorenewIcon  />}  />
         <BottomNavigationAction label='YYT' onClick={() => onSelect('YYT')} icon={<FlightIcon />} />
         <BottomNavigationAction label='YUL' onClick={() => onSelect('YUL')} icon={<FlightIcon />} />
-        <BottomNavigationAction label='YHZ' icon={<FlightIcon />} />
+        <BottomNavigationAction label='YHZ' onClick={() => onSelect('YHZ')} icon={<FlightIcon />} />
         <BottomNavigationAction label='NOTAMS' icon={<AnnouncementIcon />} />
       </BottomNavigation>
     </Box>
