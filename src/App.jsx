@@ -106,7 +106,7 @@ function App() {
       <div>
         <img className='GFA' id='GfaClouds' src={selected} alt='GFA 34' />
         <Button
-          sx={{ m: 1, ml: 3, width: 227 }}
+          sx={{ m: 1, ml: 5, width: 227 }}
           className='Buttons'
           variant='contained'
           size='small'
