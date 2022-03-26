@@ -18,6 +18,9 @@ const getURLs = (location) => {
   }
 } 
 
+
+
+
 const midnight =
   'https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_000.png';
 const six =
