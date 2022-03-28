@@ -14,10 +14,10 @@ const Theme = createTheme({
 
 const getURLs = (location) => {
   switch (location) {
-      
-  }
-} 
 
+  
+  }
+};
 
 
 
@@ -39,12 +39,8 @@ function App() {
   const [location, setLocation] = useState('YYT');
   const [avwx, setAvwx] = useState([]);
   useEffect(() => {
-    console.log(location);
+    console.log('Current location is',location);
     const fetchData = async () => {
-      /*const response = fetch(
-        'http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823'
-      );
-      console.log(await (await response).json());*/
       const headers = {
         headers: {
           Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg',
@@ -154,3 +150,8 @@ function App() {
 }
 
 export default App;
+
+/*const response = fetch(   * FOR NOTAMS, NOT USED YET 
+        'http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823'
+      );
+      console.log(await (await response).json());*/
