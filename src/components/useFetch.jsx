@@ -1,7 +1,17 @@
-const getURLs = (location) => {
+import React, { useEffect, useState } from 'react';
+
+const useFetch = (location) => {
+  const [location, setLocation] = useState('YYT');
+  const [avwx, setAvwx] = useState([])  
+  const headers = {
+    headers: {
+      Authorization: 'UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg',
+    },
+  };  useEffect(() => {
+  const getURLs = (location) => {
     switch (location) {
       case 'YYT':
-        return [
+        return urls = [
           'https://avwx.rest/api/metar/CYYT',
           'https://avwx.rest/api/taf/CYYT',
           'https://avwx.rest/api/metar/CYQX',
@@ -17,9 +27,9 @@ const getURLs = (location) => {
           'https://avwx.rest/api/metar/CYWK',
           'https://avwx.rest/api/taf/CYWK',
         ];
-  
+
       case 'YUL':
-        return [
+        return urls = [
           'https://avwx.rest/api/metar/CYUL',
           'https://avwx.rest/api/taf/CYUL',
           'https://avwx.rest/api/metar/CYQB',
@@ -36,7 +46,17 @@ const getURLs = (location) => {
           'https://avwx.rest/api/taf/CYBG',
         ];
     }
-  };
-  
+  }
 
-  Promise.all(urls.map((url) => fetch(url ...)))
+
+  const wxdata = Promise.all(urls.map((url) => fetch(...)));
+
+...some code...
+
+  setAvwx(wxdata);
+};
+fetchData();
+}, [location]);
+
+
+
