@@ -44,25 +44,21 @@ const getURLs = (location) => {
 
 const useFetch = (location) => {
   const [avwx, setAvwx] = useState([]);
-  const headers = {
-    headers: {
-      Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
-    },
-  };
-
   useEffect(() => {
-    // const wxdata = Promise.all(urls.map((url) => fetch(...)));
+    const headers = {
+      headers: {
+        Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
+      },
+    };
     const urls = getURLs(location);
     console.log(urls);
+    const wxdata = Promise.all(
+      urls.map((url) => fetch(url, headers).then((res) => res.json()))
+    );
+    console.log(wxdata);
+    setAvwx(wxdata);
+    return { avwx };
   }, [location]);
-
-  // const  wxdata = Promise.all(urls.map((url) => .fetch(..)));
-
-  // return { wxdata };
-
-  //  setAvwx(wxdata);
-
-  return ["hello"];
 };
 
 export default useFetch;

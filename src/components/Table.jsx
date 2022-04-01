@@ -80,7 +80,7 @@ export default function DenseTable(props) {
                   key={row.raw}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <SubHeader flight_rules={row.flight_rules}></SubHeader>
+                  <SubHeader flight_rules={row.flight_rules} />
                   <TableCell
                     sx={{
                       fontSize: 16,

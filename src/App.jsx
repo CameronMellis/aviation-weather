@@ -29,8 +29,8 @@ const forecast = { midnight, six, twelve, midnightIce, sixIce, twelveIce };
 
 function App() {
   const [location, setLocation] = useState("YYT");
-  const [avwx, setAvwx] = useState([]);
-  useEffect(() => {
+  const [avwx] = useState([]);
+  /* useEffect(() => {
     console.log("Current location is", location);
 
     const fetchData = async () => {
@@ -87,9 +87,8 @@ function App() {
       setAvwx(wxdata);
     };
     fetchData();
-  }, [location]);
-  const [value] = useFetch(location);
-  console.log(value);
+  }, [location]); */
+  useFetch(location);
 
   const [selected, setSelected] = useState(forecast.six);
   const [selectedIce, setSelectedIce] = useState(forecast.sixIce);
@@ -152,7 +151,7 @@ function App() {
 
 export default App;
 
-/*const response = fetch(   * FOR NOTAMS, NOT USED YET 
+/* const response = fetch(   * FOR NOTAMS, NOT USED YET 
         'http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823'
       );
-      console.log(await (await response).json());*/
+      console.log(await (await response).json()); */
