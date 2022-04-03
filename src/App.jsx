@@ -29,66 +29,7 @@ const forecast = { midnight, six, twelve, midnightIce, sixIce, twelveIce };
 
 function App() {
   const [location, setLocation] = useState("YYT");
-  const [avwx] = useState([]);
-  /* useEffect(() => {
-    console.log("Current location is", location);
-
-    const fetchData = async () => {
-      const headers = {
-        headers: {
-          Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
-        },
-      };
-      const wxdata = await Promise.all([
-        fetch("https://avwx.rest/api/metar/CYYT", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/taf/CYYT", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/metar/CYQX", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/taf/CYQX", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/metar/CYDF", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/taf/CYDF", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/metar/CYJT", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/taf/CYJT", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/metar/CYYR", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/taf/CYYR", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/metar/CZUM", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/taf/CZUM", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/metar/CYWK", headers).then((response) =>
-          response.json()
-        ),
-        fetch("https://avwx.rest/api/taf/CYWK", headers).then((response) =>
-          response.json()
-        ),
-      ]);
-      console.log(wxdata);
-      setAvwx(wxdata);
-    };
-    fetchData();
-  }, [location]); */
-  useFetch(location);
+  const { avwx } = useFetch(location);
 
   const [selected, setSelected] = useState(forecast.six);
   const [selectedIce, setSelectedIce] = useState(forecast.sixIce);

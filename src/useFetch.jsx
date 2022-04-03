@@ -39,7 +39,24 @@ const getURLs = (location) => {
       ];
 
     case "YHZ":
-      return [];
+      return [
+        "https://avwx.rest/api/metar/CYHZ",
+        "https://avwx.rest/api/taf/CYHZ",
+        "https://avwx.rest/api/metar/CYQM",
+        "https://avwx.rest/api/taf/CYQM",
+        "https://avwx.rest/api/metar/CYYG",
+        "https://avwx.rest/api/taf/CYYG",
+        "https://avwx.rest/api/metar/CYFC",
+        "https://avwx.rest/api/taf/CYFC",
+        "https://avwx.rest/api/metar/CZBF",
+        "https://avwx.rest/api/taf/CZBF",
+        "https://avwx.rest/api/metar/CYQY",
+        "https://avwx.rest/api/taf/CYQY",
+        "https://avwx.rest/api/metar/CYSJ",
+        "https://avwx.rest/api/taf/CYSJ",
+        "https://avwx.rest/api/metar/CYQI",
+        "https://avwx.rest/api/taf/CYQI",
+      ];
 
     default:
       throw new Error("Invalid Location");
@@ -49,20 +66,23 @@ const getURLs = (location) => {
 const useFetch = (location) => {
   const [avwx, setAvwx] = useState([]);
   useEffect(() => {
-    const headers = {
-      headers: {
-        Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
-      },
+    const getData = async () => {
+      const headers = {
+        headers: {
+          Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
+        },
+      };
+      const urls = getURLs(location);
+      console.log(urls);
+      const wxdata = await Promise.all(
+        urls.map((url) => fetch(url, headers).then((res) => res.json()))
+      );
+      console.log(wxdata);
+      setAvwx(wxdata);
     };
-    const urls = getURLs(location);
-    console.log(urls);
-    const wxdata = Promise.all(
-      urls.map((url) => fetch(url, headers).then((res) => res.json()))
-    );
-    console.log(wxdata);
-    setAvwx(wxdata);
-    return { avwx };
+    getData();
   }, [location]);
+  return { avwx };
 };
 
 export default useFetch;
