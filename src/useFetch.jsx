@@ -37,6 +37,10 @@ const getURLs = (location) => {
         "https://avwx.rest/api/metar/CYBG",
         "https://avwx.rest/api/taf/CYBG",
       ];
+
+    case "YHZ":
+      return [];
+
     default:
       throw new Error("Invalid Location");
   }
