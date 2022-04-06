@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -7,7 +7,7 @@ import FlightIcon from "@mui/icons-material/Flight";
 import AnnouncementIcon from "@mui/icons-material/Announcement";
 
 export default function NavBar({ onSelect }) {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   const handleClick = () => {
     window.location.reload();
   };
@@ -26,7 +26,7 @@ export default function NavBar({ onSelect }) {
         sx={{ height: 50 }}
         showLabels
         value={value}
-        onChange={(event, newValue) => {
+        onChange={(newValue) => {
           setValue(newValue);
         }}
       >
