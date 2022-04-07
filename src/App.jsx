@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Header from "./components/Header";
 import Table from "./components/Table";
 import NavBar from "./components/NavBar";
+import Graphic from "./components/Graphic";
 import "./App.css";
 import useFetch from "./useFetch";
 

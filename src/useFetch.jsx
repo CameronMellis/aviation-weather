@@ -73,11 +73,9 @@ const useFetch = (location) => {
         },
       };
       const urls = getURLs(location);
-      console.log(urls);
       const wxdata = await Promise.all(
         urls.map((url) => fetch(url, headers).then((res) => res.json()))
       );
-      console.log(wxdata);
       setAvwx(wxdata);
     };
     getData();
