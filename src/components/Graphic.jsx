@@ -3,20 +3,61 @@ import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-export default function GraphicalForecast({ onSelect }) {
-  const midnight =
-    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_000.png";
-  const six =
-    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_006.png";
-  const twelve =
-    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_012.png";
-  const midnightIce =
-    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_000.png";
-  const sixIce =
-    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_006.png";
-  const twelveIce =
-    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_012.png";
-  const forecast = { midnight, six, twelve, midnightIce, sixIce, twelveIce };
+export default function GraphicalForecast() {
+  const getGFAs = (location) => {
+    switch (location) {
+      case ("YYT", "YHZ"):
+        return;
+        let midnight =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_000.png";
+        let six =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_006.png";
+        let twelve =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_cldwx_012.png";
+        let midnightIce =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_000.png";
+        let sixIce =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_006.png";
+        let twelveIce =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/Latest-gfacn34_turbc_012.png";
+        let forecast = {
+          midnight,
+          six,
+          twelve,
+          midnightIce,
+          sixIce,
+          twelveIce,
+        };
+
+      case "YUL":
+        return;
+        let midnight =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn33/Latest-gfacn33_cldwx_000.png";
+        let six =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn33/Latest-gfacn33_cldwx_006.png";
+        let twelve =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn33/Latest-gfacn33_cldwx_012.png";
+        let midnightIce =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn33/Latest-gfacn33_turbc_000.png";
+        let sixIce =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn33/Latest-gfacn33_turbc_006.png";
+        let twelveIce =
+          "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn33/Latest-gfacn33_turbc_012.png";
+        let forecast = {
+          midnight,
+          six,
+          twelve,
+          midnightIce,
+          sixIce,
+          twelveIce,
+        };
+
+      default:
+        throw new Error("Invalid Location");
+    }
+  };
+
+  const forecast = getGFAs(location);
 
   const [selected, setSelected] = useState(forecast.six);
   const [selectedIce, setSelectedIce] = useState(forecast.sixIce);
