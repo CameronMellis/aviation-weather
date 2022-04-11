@@ -3,16 +3,18 @@ import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-export default function GraphicalForecast() {
-  const getMapImage = (location, type, time) =>
-    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn${"location"}/Latest-gfacn${"location"}_${"type"}_${"time"}.png";
+export default function GraphicalForecast(location) {
+
+  const getMapImage = (location, type, time) => {
+    "https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn${location}/Latest-gfacn${location}_${type}_${time}.png";
+  };
 
   return (
     <Box>
       <img
         className="GFA"
         id="GfaClouds"
-        src={getMapImage("34", "cldwx", "006")}
+        src={getMapImage(location, "cldwx", "006")}
         alt="GFA 34"
       />
       <Button
@@ -28,7 +30,6 @@ export default function GraphicalForecast() {
         className="Buttons"
         variant="contained"
         size="small"
-
       >
         Issued 0600Z
       </Button>
@@ -37,14 +38,13 @@ export default function GraphicalForecast() {
         className="Buttons"
         variant="contained"
         size="small"
-
       >
         Issued 1200Z
       </Button>
       <img
         className="GFA"
         id="GfaIcing"
-        src={getMapImage("34", "turbc", "006")}
+        src={getMapImage(location, "turbc", "006")}
         alt="GFA 34 Icing and Turbulence"
       />
     </Box>
