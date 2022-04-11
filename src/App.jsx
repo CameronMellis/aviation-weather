@@ -25,7 +25,7 @@ function App() {
       </div>
 
       <div>
-        <Graphic />
+        <Graphic location={location} />
       </div>
       <NavBar onSelect={setLocation} />
     </ThemeProvider>

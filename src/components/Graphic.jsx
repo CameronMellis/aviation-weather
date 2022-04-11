@@ -54,42 +54,40 @@ export default function getGFAs() {
     }
     default:
       throw new Error("Invalid Location");
+        return (
+        <Box>
+          <img className="GFA" id="GfaClouds" src={forecast.six} alt="GFA 34" />
+          <Button
+            sx={{ m: 1, ml: 5, width: 227 }}
+            className="Buttons"
+            variant="contained"
+            size="small"
+          >
+            Issued 0000Z
+          </Button>
+          <Button
+            sx={{ m: 1, width: 227 }}
+            className="Buttons"
+            variant="contained"
+            size="small"
+          >
+            Issued 0600Z
+          </Button>
+          <Button
+            sx={{ m: 1, width: 227 }}
+            className="Buttons"
+            variant="contained"
+            size="small"
+          >
+            Issued 1200Z
+          </Button>
+          <img
+            className="GFA"
+            id="GfaIcing"
+            src={getGFAs(forecast.sixIce)}
+            alt="GFA 34 Icing and Turbulence"
+          />
+        </Box>
+      );
   }
-  const forecast = getGFAs(location);
-
-  return (
-    <Box>
-      <img className="GFA" id="GfaClouds" src={forecast.six} alt="GFA 34" />
-      <Button
-        sx={{ m: 1, ml: 5, width: 227 }}
-        className="Buttons"
-        variant="contained"
-        size="small"
-      >
-        Issued 0000Z
-      </Button>
-      <Button
-        sx={{ m: 1, width: 227 }}
-        className="Buttons"
-        variant="contained"
-        size="small"
-      >
-        Issued 0600Z
-      </Button>
-      <Button
-        sx={{ m: 1, width: 227 }}
-        className="Buttons"
-        variant="contained"
-        size="small"
-      >
-        Issued 1200Z
-      </Button>
-      <img
-        className="GFA"
-        id="GfaIcing"
-        src={getGFAs(forecast.sixIce)}
-        alt="GFA 34 Icing and Turbulence"
-      />
-    </Box>
-  );
 }
