@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -38,14 +40,13 @@ function SubHeader(props) {
 }
 
 export default function DenseTable(props) {
-  console.log(props);
   return (
     <ThemeProvider theme={theme}>
       <TableContainer
         sx={{
           width: "100%",
           maxWidth: 650,
-          maxHeight: 1205,
+          maxHeight: 1210,
           fontSize: "15px",
           backgroundColor: "#616161",
         }}
@@ -90,7 +91,7 @@ export default function DenseTable(props) {
                     align="left"
                   >
                     {row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
-                      return "\n" + oldValue;
+                      return `\n${oldValue}`;
                     })}
                   </TableCell>
                 </TableRow>

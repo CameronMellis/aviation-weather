@@ -6,6 +6,7 @@ import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlightIcon from "@mui/icons-material/Flight";
 import AnnouncementIcon from "@mui/icons-material/Announcement";
 
+// eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
   const handleClick = () => {
