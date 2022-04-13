@@ -7,7 +7,7 @@
 .GFA {
   padding-right: 10px;
   float: right;
-  max-width: 750px;
+  max-width: auto;
 }
 
 .Table {

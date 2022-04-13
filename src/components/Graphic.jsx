@@ -28,28 +28,28 @@ export default function Graphic({ location }) {
       />
       <Box>
         <Button
-          sx={{ m: 1, ml: 5, width: 227 }}
+          sx={{ m: 1, width: 245 }}
           className="Buttons"
           variant="contained"
           size="small"
         >
-          Issued 0000Z
+          0000Z Forecast
         </Button>
         <Button
-          sx={{ m: 1, width: 227 }}
+          sx={{ m: 1, width: 245 }}
           className="Buttons"
           variant="contained"
           size="small"
         >
-          Issued 0600Z
+          0600Z Forecast
         </Button>
         <Button
-          sx={{ m: 1, width: 227 }}
+          sx={{ m: 1, width: 245 }}
           className="Buttons"
           variant="contained"
           size="small"
         >
-          Issued 1200Z
+          1200Z Forecast
         </Button>
       </Box>
       <img

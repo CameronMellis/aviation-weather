@@ -20,7 +20,6 @@ function App() {
     <ThemeProvider theme={Theme}>
       <div className="App">
         <Table className="Table" data={avwx} />
-
         <Graphic location={location} />
       </div>
       <NavBar onSelect={setLocation} />
