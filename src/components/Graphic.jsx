@@ -9,6 +9,8 @@ const getLocation = (location) => {
     case "YYT":
     case "YHZ":
       return "gfacn34";
+    case "YUL":
+      return "gfacn33";
     default:
       throw new Error("Invalid airport code");
   }
