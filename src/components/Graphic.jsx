@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -20,45 +20,59 @@ const getMap = (location, type, time) =>
   `https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/${location}/Latest-${location}_${type}_${time}.png`;
 
 export default function Graphic({ location }) {
+  const [selected, setSelected] = useState(
+    getMap(getLocation(location), "cldwx", "006")
+  );
+  const [selectedIce, setSelectedIce] = useState(
+    getMap(getLocation(location), "turbc", "006")
+  );
+
   return (
     <>
-      <img
-        className="GFA"
-        id="GfaClouds"
-        src={getMap(getLocation(location), "cldwx", "006")}
-        alt="GFA 34"
-      />
+      <img className="GFA" id="GfaClouds" src={selected} alt="GFA" />
       <Box>
         <Button
           sx={{ m: 1, width: 245 }}
           className="Buttons"
           variant="contained"
           size="small"
+          onClick={() => {
+            setSelected(getMap(getLocation(location), "cldwx", "000"));
+            setSelectedIce(getMap(getLocation(location), "turbc", "000"));
+          }}
         >
-          0000Z Forecast
+          Previous 6HR Forecast
         </Button>
         <Button
           sx={{ m: 1, width: 245 }}
           className="Buttons"
           variant="contained"
           size="small"
+          onClick={() => {
+            setSelected(getMap(getLocation(location), "cldwx", "006"));
+            setSelectedIce(getMap(getLocation(location), "turbc", "006"));
+          }}
         >
-          0600Z Forecast
+          6HR Forecast
         </Button>
         <Button
           sx={{ m: 1, width: 245 }}
           className="Buttons"
           variant="contained"
           size="small"
+          onClick={() => {
+            setSelected(getMap(getLocation(location), "cldwx", "012"));
+            setSelectedIce(getMap(getLocation(location), "turbc", "012"));
+          }}
         >
-          1200Z Forecast
+          Next 6HR Forecast
         </Button>
       </Box>
       <img
         className="GFA"
         id="GfaIcing"
-        src={getMap(getLocation(location), "turbc", "006")}
-        alt="GFA 34 Icing and Turbulence"
+        src={selectedIce}
+        alt="GFA Icing and Turbulence"
       />
     </>
   );
