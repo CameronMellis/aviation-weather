@@ -45,7 +45,8 @@ export default function DenseTable(props) {
       <TableContainer
         sx={{
           maxWidth: 850,
-          maxHeight: 1145,
+          minHeight: 600,
+          maxHeight: 900,
           fontSize: "15px",
           backgroundColor: "#616161",
         }}

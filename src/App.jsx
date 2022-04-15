@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
 import Table from "./components/Table";
 import NavBar from "./components/NavBar";
 import Graphic from "./components/Graphic";
@@ -18,11 +19,13 @@ function App() {
 
   return (
     <ThemeProvider theme={Theme}>
-      <div className="App">
-        <Table className="Table" data={avwx} />
-        <Graphic location={location} />
-      </div>
-      <NavBar onSelect={setLocation} />
+      <Grid>
+        <div className="App">
+          <Table className="Table" data={avwx} />
+          <Graphic location={location} />
+        </div>
+        <NavBar onSelect={setLocation} />
+      </Grid>
     </ThemeProvider>
   );
 }
