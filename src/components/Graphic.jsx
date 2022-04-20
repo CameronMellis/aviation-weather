@@ -29,10 +29,17 @@ export default function Graphic({ location }) {
 
   return (
     <>
-      <img className="GFA" id="GfaClouds" src={selected} alt="GFA" />
-      <Box>
+      <div className="GFAcontainer">
+        <img className="GFA" id="GfaClouds" src={selected} alt="GFA" />
+      </div>
+      <Box
+        sx={{
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
         <Button
-          sx={{ m: 1, width: 245 }}
+          sx={{ m: 1 }}
           className="Buttons"
           variant="contained"
           size="small"
@@ -41,10 +48,10 @@ export default function Graphic({ location }) {
             setSelectedIce(getMap(getLocation(location), "turbc", "000"));
           }}
         >
-          Previous 6HR Forecast
+          Previous 6HR
         </Button>
         <Button
-          sx={{ m: 1, width: 245 }}
+          sx={{ m: 1 }}
           className="Buttons"
           variant="contained"
           size="small"
@@ -53,10 +60,10 @@ export default function Graphic({ location }) {
             setSelectedIce(getMap(getLocation(location), "turbc", "006"));
           }}
         >
-          6HR Forecast
+          6HR
         </Button>
         <Button
-          sx={{ m: 1, width: 245 }}
+          sx={{ m: 1 }}
           className="Buttons"
           variant="contained"
           size="small"
@@ -65,15 +72,17 @@ export default function Graphic({ location }) {
             setSelectedIce(getMap(getLocation(location), "turbc", "012"));
           }}
         >
-          Next 6HR Forecast
+          Next 6HR
         </Button>
       </Box>
-      <img
-        className="GFA"
-        id="GfaIcing"
-        src={selectedIce}
-        alt="GFA Icing and Turbulence"
-      />
+      <div className="GFAcontainer">
+        <img
+          className="GFA"
+          id="GfaIcing"
+          src={selectedIce}
+          alt="GFA Icing and Turbulence"
+        />
+      </div>
     </>
   );
 }

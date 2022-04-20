@@ -1,24 +1,29 @@
 .App {
-  display: flex;
-  flex-direction: column;
+  overflow: auto;
+  display: grid; 
+  grid-template-columns: auto min-content; 
+  grid-template-rows: min-content 1fr min-content;
   text-align: center;
   color: #373737;
   white-space: pre-wrap;
 }
 
+.GFAcontainer {
+  max-width: 758px;
+  max-height: 609px;;
+}
+
 .GFA {
   display: flex;
-  max-width: 608px;
-  margin-left: 60%;
+  width: auto;
+  height: 100%;
 }
 
 .Table {
-  display: flex;
-  flex-grow: 1;
+  grid-row: 1/-1;
   min-height: 0;
-  overflow: scroll;
-  margin-left: 10px;
-  float: left;
+  height: auto;
+
 }
 
 .Buttons {

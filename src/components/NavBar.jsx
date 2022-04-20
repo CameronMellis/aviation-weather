@@ -14,15 +14,7 @@ export default function NavBar({ onSelect }) {
   };
 
   return (
-    <Box
-      sx={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
-      }}
-      elevation={2}
-    >
+    <Box sx={{}} elevation={2}>
       <BottomNavigation
         sx={{ height: 50 }}
         showLabels

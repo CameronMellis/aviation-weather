@@ -44,9 +44,6 @@ export default function DenseTable(props) {
     <ThemeProvider theme={theme}>
       <TableContainer
         sx={{
-          maxWidth: 850,
-          minHeight: 600,
-          maxHeight: 900,
           fontSize: "15px",
           backgroundColor: "#616161",
         }}
