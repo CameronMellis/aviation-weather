@@ -39,7 +39,7 @@ export default function Graphic({ location }) {
         }}
       >
         <Button
-          sx={{ m: 1 }}
+          sx={{ m: 1, ml: 28 }}
           className="Buttons"
           variant="contained"
           size="small"
