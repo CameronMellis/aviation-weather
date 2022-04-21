@@ -20,17 +20,17 @@ const getMap = (location, type, time) =>
   `https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/${location}/Latest-${location}_${type}_${time}.png`;
 
 export default function Graphic({ location }) {
-  const [selected, setSelected] = useState(
-    getMap(getLocation(location), "cldwx", "006")
-  );
-  const [selectedIce, setSelectedIce] = useState(
-    getMap(getLocation(location), "turbc", "006")
-  );
+  const [time, setTime] = useState("006");
 
   return (
     <>
       <div className="GFAcontainer">
-        <img className="GFA" id="GfaClouds" src={selected} alt="GFA" />
+        <img
+          className="GFA"
+          id="GfaClouds"
+          src={getMap(getLocation(location), "cldwx", time)}
+          alt="GFA"
+        />
       </div>
       <Box
         sx={{
@@ -39,37 +39,34 @@ export default function Graphic({ location }) {
         }}
       >
         <Button
-          sx={{ m: 1, ml: 28 }}
+          sx={{ m: 1, ml: 15, mr: 3, width: 150 }}
           className="Buttons"
           variant="contained"
           size="small"
           onClick={() => {
-            setSelected(getMap(getLocation(location), "cldwx", "000"));
-            setSelectedIce(getMap(getLocation(location), "turbc", "000"));
+            setTime("000");
           }}
         >
           Previous 6HR
         </Button>
         <Button
-          sx={{ m: 1 }}
+          sx={{ m: 1, mr: 3, width: 150 }}
           className="Buttons"
           variant="contained"
           size="small"
           onClick={() => {
-            setSelected(getMap(getLocation(location), "cldwx", "006"));
-            setSelectedIce(getMap(getLocation(location), "turbc", "006"));
+            setTime("006");
           }}
         >
-          6HR
+          CURRENT
         </Button>
         <Button
-          sx={{ m: 1 }}
+          sx={{ m: 1, width: 150 }}
           className="Buttons"
           variant="contained"
           size="small"
           onClick={() => {
-            setSelected(getMap(getLocation(location), "cldwx", "012"));
-            setSelectedIce(getMap(getLocation(location), "turbc", "012"));
+            setTime("012");
           }}
         >
           Next 6HR
@@ -79,7 +76,7 @@ export default function Graphic({ location }) {
         <img
           className="GFA"
           id="GfaIcing"
-          src={selectedIce}
+          src={getMap(getLocation(location), "turbc", time)}
           alt="GFA Icing and Turbulence"
         />
       </div>
