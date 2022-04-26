@@ -5,6 +5,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlightIcon from "@mui/icons-material/Flight";
 import AnnouncementIcon from "@mui/icons-material/Announcement";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
@@ -30,7 +31,7 @@ export default function NavBar({ onSelect }) {
         />
         <BottomNavigationAction
           label="YYT"
-          onClick={() => onSelect("YYT")}
+          onClick={<Link to="/" />}
           icon={<FlightIcon />}
         />
         <BottomNavigationAction

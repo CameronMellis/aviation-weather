@@ -17,7 +17,6 @@ const theme = createTheme({
   },
 });
 
-
 export default function DenseTable(props) {
   return (
     <ThemeProvider theme={theme}>
@@ -57,7 +56,6 @@ export default function DenseTable(props) {
                   key={row.raw}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <SubHeader flight_rules={row.flight_rules} />
                   <TableCell
                     sx={{
                       fontSize: 16,
@@ -65,11 +63,7 @@ export default function DenseTable(props) {
                       backgroundColor: "#8e8e8e",
                     }}
                     align="left"
-                  >
-                    {row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
-                      return `\n${oldValue}`;
-                    })}
-                  </TableCell>
+                  />
                 </TableRow>
               ))}
             </TableBody>
