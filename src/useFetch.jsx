@@ -36,6 +36,10 @@ const getURLs = (location) => {
         "https://avwx.rest/api/taf/CYZV",
         "https://avwx.rest/api/metar/CYBG",
         "https://avwx.rest/api/taf/CYBG",
+        "https://avwx.rest/api/metar/CYBC",
+        "https://avwx.rest/api/taf/CYBC",
+        "https://avwx.rest/api/metar/CYYZ",
+        "https://avwx.rest/api/taf/CYYZ",
       ];
 
     case "YHZ":
