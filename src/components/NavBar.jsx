@@ -36,7 +36,7 @@ export default function NavBar({ onSelect }) {
         />
         <BottomNavigationAction
           label="YUL"
-          onClick={() => onSelect("YUL")}
+          onClick={<Link to="/" />}
           icon={<FlightIcon />}
         />
         <BottomNavigationAction
