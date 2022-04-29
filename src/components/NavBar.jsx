@@ -15,9 +15,9 @@ export default function NavBar({ onSelect }) {
   };
 
   return (
-    <Box sx={{}} elevation={2}>
+    <Box sx={{}} elevation={3}>
       <BottomNavigation
-        sx={{ height: 50 }}
+        sx={{ height: 45 }}
         showLabels
         value={value}
         onChange={(newValue) => {
