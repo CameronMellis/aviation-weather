@@ -31,8 +31,3 @@ function App() {
 }
 
 export default App;
-
-/* const response = fetch(   * FOR NOTAMS, NOT USED YET 
-        'http://localhost:3000/weather/api/alpha/?point=CYDF%7Csite%7C-52.752,47.619&alpha=notam&notam_choice=default&_=1647198259823'
-      );
-      console.log(await (await response).json()); */
