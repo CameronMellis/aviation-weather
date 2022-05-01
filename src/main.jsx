@@ -9,9 +9,9 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/YYT" />
-        <Route path="/YHZ" />
-        <Route path="/YUL" />
+        <Route path="/YYT" element={<App />} />
+        <Route path="/YHZ" element={<App />} />
+        <Route path="/YUL" element={<App />} />
       </Routes>
     </BrowserRouter>
     ,

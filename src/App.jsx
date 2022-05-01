@@ -21,7 +21,6 @@ function App() {
   return (
     <ThemeProvider theme={Theme}>
       <Grid sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-        <Outlet />
         <div className="App">
           <Table className="Table" data={avwx} />
           <Graphic location={location} />
