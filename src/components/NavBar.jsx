@@ -7,7 +7,7 @@ import FlightIcon from "@mui/icons-material/Flight";
 import { useParams, useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-export default function NavBar({ OnSelect }) {
+export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
   const params = useParams();
@@ -36,6 +36,7 @@ export default function NavBar({ OnSelect }) {
           label="YYT"
           onClick={() => {
             navigate("/YYT");
+            onSelect("YYT");
           }}
           icon={<FlightIcon />}
         />
@@ -43,6 +44,7 @@ export default function NavBar({ OnSelect }) {
           label="YUL"
           onClick={() => {
             navigate("/YUL");
+            onSelect("YUL");
           }}
           icon={<FlightIcon />}
         />
@@ -50,6 +52,7 @@ export default function NavBar({ OnSelect }) {
           label="YHZ"
           onClick={() => {
             navigate("/YHZ");
+            onSelect("YHZ");
           }}
           icon={<FlightIcon />}
         />
