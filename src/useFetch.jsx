@@ -96,8 +96,10 @@ const getURLs = (location) => {
 };
 
 const useFetch = (location) => {
+  const [, setIsLoading] = useState(false);
   const [avwx, setAvwx] = useState([]);
   useEffect(() => {
+    setIsLoading(true);
     const getData = async () => {
       const headers = {
         headers: {
@@ -108,6 +110,7 @@ const useFetch = (location) => {
       const wxdata = await Promise.all(
         urls.map((url) => fetch(url, headers).then((res) => res.json()))
       );
+      setIsLoading(false);
       setAvwx(wxdata);
     };
     getData();

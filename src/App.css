@@ -1,7 +1,7 @@
 .App {
   overflow: auto;
-  display: grid; 
-  grid-template-columns: auto min-content; 
+  display: grid;
+  grid-template-columns: auto min-content;
   grid-template-rows: min-content 1fr min-content;
   text-align: center;
   color: #373737;
@@ -10,7 +10,7 @@
 
 .GFAcontainer {
   max-width: 758px;
-  max-height: 609px;;
+  max-height: 609px;
 }
 
 .GFA {
@@ -23,7 +23,6 @@
   grid-row: 1/-1;
   min-height: 0;
   height: auto;
-
 }
 
 .Buttons {
