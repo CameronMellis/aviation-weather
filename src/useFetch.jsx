@@ -96,7 +96,7 @@ const getURLs = (location) => {
 };
 
 const useFetch = (location) => {
-  const [, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [avwx, setAvwx] = useState([]);
   useEffect(() => {
     setIsLoading(true);

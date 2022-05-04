@@ -10,7 +10,7 @@ import { useParams, useNavigate } from "react-router-dom";
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
-  const params = useParams();
+  /*const params = useParams();*/
   const handleClick = () => {
     window.location.reload();
   };

@@ -18,7 +18,7 @@ const Theme = createTheme({
 function App() {
   const [location, setLocation] = useState("YYT");
   const { avwx } = useFetch(location);
-  const [isLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <ThemeProvider theme={Theme}>
