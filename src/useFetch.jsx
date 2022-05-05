@@ -115,7 +115,7 @@ const useFetch = (location) => {
     };
     getData();
   }, [location]);
-  return { avwx };
+  return { avwx, isLoading };
 };
 
 export default useFetch;

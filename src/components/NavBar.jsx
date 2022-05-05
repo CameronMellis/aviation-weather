@@ -4,13 +4,10 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlightIcon from "@mui/icons-material/Flight";
-import { useParams, useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
-  const navigate = useNavigate();
-  /*const params = useParams();*/
   const handleClick = () => {
     window.location.reload();
   };
@@ -35,24 +32,21 @@ export default function NavBar({ onSelect }) {
         <BottomNavigationAction
           label="YYT"
           onClick={() => {
-            navigate("/YYT");
-            onSelect("YYT");
+            onSelect("/YYT");
           }}
           icon={<FlightIcon />}
         />
         <BottomNavigationAction
           label="YUL"
           onClick={() => {
-            navigate("/YUL");
-            onSelect("YUL");
+            onSelect("/YUL");
           }}
           icon={<FlightIcon />}
         />
         <BottomNavigationAction
           label="YHZ"
           onClick={() => {
-            navigate("/YHZ");
-            onSelect("YHZ");
+            onSelect("/YHZ");
           }}
           icon={<FlightIcon />}
         />
