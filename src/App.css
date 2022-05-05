@@ -22,7 +22,7 @@
 .Table {
   grid-row: 1/-1;
   min-height: 0;
-  min-width: 800px;
+  min-width: 650px;
   height: auto;
 }
 
