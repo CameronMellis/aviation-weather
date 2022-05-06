@@ -2,11 +2,11 @@
 
 An aviation weather app built for pilots and dispatchers to consolidate multiple reporting stations onto one fast and easy to use page.
 
-![a screen shot of the app](./appScreenshot.png)
+![a screen shot of the app](appScreenshot.png)
 
 ### Some resources if you've never read aviation formatted weather data...
 
-![plain text METAR](./exampleMetar.png)
+![plain text METAR](exampleMetar.png)
 
 [how to read METAR and TAF reports](https://pilotinstitute.com/metar-and-taf-reports/)
 
