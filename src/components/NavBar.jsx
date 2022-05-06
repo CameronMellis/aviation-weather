@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useParams } from "react";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlightIcon from "@mui/icons-material/Flight";
+import useFetch from "../useFetch";
 
 // eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
-  const handleClick = () => {
-    window.location.reload();
-  };
-
-  /* {<Link to="/" />} */
+  const params = useParams();
+  const currentLocation = params.location;
 
   return (
     <Box elevation={3}>
@@ -26,7 +24,7 @@ export default function NavBar({ onSelect }) {
       >
         <BottomNavigationAction
           label="Refresh"
-          onClick={handleClick}
+          onClick={useFetch(currentLocation)}
           icon={<AutorenewIcon />}
         />
         <BottomNavigationAction
