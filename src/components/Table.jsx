@@ -87,6 +87,7 @@ export default function DenseTable(props) {
                     }}
                     align="left"
                   >
+                    {/* This REGEX formats the raw Terminal Area Forecast into readable paragraphs that line breaks by time period BECMG or FM */}
                     {row.raw.replace(/BECMG|FM[0-9]*/g, (oldValue) => {
                       return `\n${oldValue}`;
                     })}
