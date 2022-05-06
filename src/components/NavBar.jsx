@@ -9,8 +9,6 @@ import useFetch from "../useFetch";
 // eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
-  const params = useParams();
-  const currentLocation = params.location;
 
   return (
     <Box elevation={3}>
@@ -24,7 +22,7 @@ export default function NavBar({ onSelect }) {
       >
         <BottomNavigationAction
           label="Refresh"
-          onClick={useFetch(currentLocation)}
+          onClick={useFetch()}
           icon={<AutorenewIcon />}
         />
         <BottomNavigationAction
