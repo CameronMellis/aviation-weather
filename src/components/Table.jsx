@@ -17,15 +17,15 @@ const theme = createTheme({
   },
 });
 
-function SubHeader(props) {
+function SubHeader({ flightRules }) {
   let color = "#616161";
-  if (props.flight_rules === "VFR") {
+  if (flightRules === "VFR") {
     color = "green";
-  } else if (props.flight_rules === "MVFR") {
+  } else if (flightRules === "MVFR") {
     color = "#8bc34a";
-  } else if (props.flight_rules === "IFR") {
+  } else if (flightRules === "IFR") {
     color = "yellow";
-  } else if (props.flight_rules === "LIFR") {
+  } else if (flightRules === "LIFR") {
     color = "red";
   }
   return (
@@ -34,7 +34,7 @@ function SubHeader(props) {
       align="center"
     >
       {" "}
-      {props.flight_rules}
+      {flightRules}
     </TableCell>
   );
 }
@@ -78,7 +78,7 @@ export default function DenseTable(props) {
                   key={row.raw}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <SubHeader flight_rules={row.flight_rules} />
+                  <SubHeader flightRules={row.flight_rules} />
                   <TableCell
                     sx={{
                       fontSize: 16,
