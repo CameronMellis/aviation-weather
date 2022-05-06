@@ -15,7 +15,7 @@ export default function NavBar({ onSelect }) {
   /* {<Link to="/" />} */
 
   return (
-    <Box sx={{}} elevation={3}>
+    <Box elevation={3}>
       <BottomNavigation
         sx={{ height: 45 }}
         showLabels
