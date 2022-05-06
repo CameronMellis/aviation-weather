@@ -8,8 +8,8 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/:location" element={<App />} />
+        <Route path="aviation-weather/" element={<App />} />
+        <Route path="aviation-weather/:location" element={<App />} />
       </Routes>
     </BrowserRouter>
     ,
