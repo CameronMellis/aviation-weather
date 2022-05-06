@@ -6,7 +6,7 @@ import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/aviation-weather/">
+    <BrowserRouter basename="/aviation-weather">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/:location" element={<App />} />
