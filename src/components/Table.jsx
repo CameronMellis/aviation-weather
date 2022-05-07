@@ -22,11 +22,11 @@ function SubHeader({ flightRules }) {
   if (flightRules === "VFR") {
     color = "green";
   } else if (flightRules === "MVFR") {
-    color = "#8bc34a";
+    color = "blue";
   } else if (flightRules === "IFR") {
-    color = "yellow";
-  } else if (flightRules === "LIFR") {
     color = "red";
+  } else if (flightRules === "LIFR") {
+    color = "magenta";
   }
   return (
     <TableCell
