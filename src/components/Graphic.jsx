@@ -39,7 +39,7 @@ export default function Graphic({ location }) {
         }}
       >
         <Button
-          sx={{ m: 1, ml: 15, mr: 3, width: 150 }}
+          sx={{ m: 1, ml: 15, mr: 3, width: 160 }}
           className="Buttons"
           variant="contained"
           size="small"
@@ -50,7 +50,7 @@ export default function Graphic({ location }) {
           Previous 6HR
         </Button>
         <Button
-          sx={{ m: 1, mr: 3, width: 150 }}
+          sx={{ m: 1, mr: 3, width: 160 }}
           className="Buttons"
           variant="contained"
           size="small"
@@ -61,7 +61,7 @@ export default function Graphic({ location }) {
           CURRENT
         </Button>
         <Button
-          sx={{ m: 1, width: 150 }}
+          sx={{ m: 1, width: 160 }}
           className="Buttons"
           variant="contained"
           size="small"
