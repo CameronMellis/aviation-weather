@@ -20,7 +20,7 @@ export default function NavBar({ onSelect }) {
   return (
     <Box elevation={2}>
       <BottomNavigation
-        sx={{ position: "sticky", bottom: 0, left: 0, right: 0 }}
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
         showLabels
         value={value}
         onChange={(newValue) => {
