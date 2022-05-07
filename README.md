@@ -8,6 +8,8 @@ An aviation weather app built for pilots and dispatchers to consolidate multiple
 
 ![plain text METAR](exampleMetar.png)
 
+![flight rules chart](flightRuleshelp.png)
+
 [how to read METAR and TAF reports](https://pilotinstitute.com/metar-and-taf-reports/)
 
 [how to read GFA reports](https://flightplanning.navcanada.ca/cgi-bin/CreePage.pl?Page=info-gfa&NoSession=NS_Inconnu&TypeDoc=gfa&Langue=anglais#abbr_symb)
