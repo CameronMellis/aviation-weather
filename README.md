@@ -8,7 +8,7 @@ An aviation weather app built for pilots and dispatchers to consolidate multiple
 
 ![plain text METAR](exampleMetar.png)
 
-![flight rules chart](flightRuleshelp.png)
+![flight rules chart](flightRulesHelp.png)
 
 [how to read METAR and TAF reports](https://pilotinstitute.com/metar-and-taf-reports/)
 
