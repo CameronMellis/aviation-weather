@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const getURLs = (location) => {
   switch (location) {
@@ -98,24 +98,24 @@ const getURLs = (location) => {
 const useFetch = (location) => {
   const [isLoading, setIsLoading] = useState(false);
   const [avwx, setAvwx] = useState([]);
-  useEffect(() => {
+  const getData = useCallback(async () => {
     setIsLoading(true);
-    const getData = async () => {
-      const headers = {
-        headers: {
-          Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
-        },
-      };
-      const urls = getURLs(location);
-      const wxdata = await Promise.all(
-        urls.map((url) => fetch(url, headers).then((res) => res.json()))
-      );
-      setIsLoading(false);
-      setAvwx(wxdata);
+    const headers = {
+      headers: {
+        Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
+      },
     };
-    getData();
+    const urls = getURLs(location);
+    const wxdata = await Promise.all(
+      urls.map((url) => fetch(url, headers).then((res) => res.json()))
+    );
+    setIsLoading(false);
+    setAvwx(wxdata);
   }, [location]);
-  return { avwx, isLoading };
+  useEffect(() => {
+    getData();
+  }, [getData]);
+  return { avwx, isLoading, getData };
 };
 
 export default useFetch;

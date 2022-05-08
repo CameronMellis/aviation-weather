@@ -5,12 +5,11 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlightIcon from "@mui/icons-material/Flight";
 import HelpIcon from "@mui/icons-material/Help";
-import useFetch from "../useFetch";
+import getData from "../useFetch";
 
 // eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
-  const { avwx } = useFetch(Location);
 
   const openInNewTab = (url) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
@@ -30,7 +29,7 @@ export default function NavBar({ onSelect }) {
         <BottomNavigationAction
           label="Refresh"
           onClick={() => {
-            onSelect({ avwx });
+            onSelect({ getData });
           }}
           icon={<AutorenewIcon />}
         />
