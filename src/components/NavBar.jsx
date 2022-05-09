@@ -5,7 +5,6 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlightIcon from "@mui/icons-material/Flight";
 import HelpIcon from "@mui/icons-material/Help";
-import getData from "../useFetch";
 
 // eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
@@ -29,7 +28,7 @@ export default function NavBar({ onSelect }) {
         <BottomNavigationAction
           label="Refresh"
           onClick={() => {
-            onSelect({ getData });
+            onSelect();
           }}
           icon={<AutorenewIcon />}
         />
