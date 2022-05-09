@@ -98,24 +98,24 @@ const getURLs = (location) => {
 const useFetch = (location) => {
   const [isLoading, setIsLoading] = useState(false);
   const [avwx, setAvwx] = useState([]);
-  const getData = useCallback(async () => {
-    setIsLoading(true);
-    const headers = {
-      headers: {
-        Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
-      },
-    };
-    const urls = getURLs(location);
-    const wxdata = await Promise.all(
-      urls.map((url) => fetch(url, headers).then((res) => res.json()))
-    );
-    setIsLoading(false);
-    setAvwx(wxdata);
-  }, [location]);
   useEffect(() => {
+    setIsLoading(true);
+    const getData = async () => {
+      const headers = {
+        headers: {
+          Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
+        },
+      };
+      const urls = getURLs(location);
+      const wxdata = await Promise.all(
+        urls.map((url) => fetch(url, headers).then((res) => res.json()))
+      );
+      setIsLoading(false);
+      setAvwx(wxdata);
+    };
     getData();
-  }, [getData]);
-  return { avwx, isLoading, getData };
+  }, [location]);
+  return { avwx, isLoading };
 };
 
 export default useFetch;
