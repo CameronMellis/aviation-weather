@@ -25,13 +25,7 @@ export default function NavBar({ onSelect }) {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction
-          label="Refresh"
-          onClick={() => {
-            onSelect();
-          }}
-          icon={<AutorenewIcon />}
-        />
+        <BottomNavigationAction label="Refresh" icon={<AutorenewIcon />} />
         <BottomNavigationAction
           label="YYT"
           onClick={() => {
