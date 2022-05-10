@@ -96,14 +96,14 @@ const getURLs = (location) => {
 };
 
 const useFetch = (location) => {
-  const [isLoading, setIsLoading] = useState(false);
   const [avwx, setAvwx] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    setIsLoading(true);
     const getData = async () => {
+      setIsLoading(true);
       const headers = {
         headers: {
-          Authorization: "UoCyZ0DYZP9cMI2IxUJNoLWTrsxvorXAuAwrvGjjZYg",
+          Authorization: "dB2w9VHe5mzuqKLgd9Slf5RyIg5jUv3mNV5DyWJpY4s",
         },
       };
       const urls = getURLs(location);
