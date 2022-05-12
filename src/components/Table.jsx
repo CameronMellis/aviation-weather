@@ -22,7 +22,7 @@ function SubHeader({ flightRules }) {
   if (flightRules === "VFR") {
     color = "green";
   } else if (flightRules === "MVFR") {
-    color = "blue";
+    color = "#039be5";
   } else if (flightRules === "IFR") {
     color = "red";
   } else if (flightRules === "LIFR") {
@@ -30,7 +30,7 @@ function SubHeader({ flightRules }) {
   }
   return (
     <TableCell
-      sx={{ fontSize: 15, fontWeight: "bold", backgroundColor: color }}
+      sx={{ fontSize: 18, fontWeight: "bold", backgroundColor: color }}
       align="center"
     >
       {" "}
@@ -44,7 +44,7 @@ export default function DenseTable(props) {
     <ThemeProvider theme={theme}>
       <TableContainer
         sx={{
-          fontSize: "15px",
+          fontSize: "20px",
           backgroundColor: "#616161",
         }}
         component={Paper}
@@ -56,16 +56,16 @@ export default function DenseTable(props) {
               <TableRow sx={{ backgroundColor: "#616161" }}>
                 <TableCell
                   sx={{
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: "bold",
                     backgroundColor: "#616161",
                   }}
-                  align="center"
+                  align="left"
                 >
                   Flight Rules
                 </TableCell>
                 <TableCell
-                  sx={{ fontSize: 15, fontWeight: "bold" }}
+                  sx={{ fontSize: 18, fontWeight: "bold" }}
                   align="left"
                 >
                   METAR/TAF
@@ -81,7 +81,7 @@ export default function DenseTable(props) {
                   <SubHeader flightRules={row.flight_rules} />
                   <TableCell
                     sx={{
-                      fontSize: 16,
+                      fontSize: 18,
                       fontWeight: "medium",
                       backgroundColor: "#8e8e8e",
                     }}
