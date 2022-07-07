@@ -55,6 +55,13 @@ export default function NavBar({ onSelect }) {
           }
           icon={<HelpIcon />}
         />
+        <BottomNavigationAction
+          label="Refresh(Not Working)"
+          // onClick={() => {
+          //   onSelect("/YHZ");
+          // }}
+          icon={<AutorenewIcon />}
+        />
       </BottomNavigation>
     </Box>
   );
