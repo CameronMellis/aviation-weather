@@ -30,7 +30,12 @@ function SubHeader({ flightRules }) {
   }
   return (
     <TableCell
-      sx={{ fontSize: 18, fontWeight: "bold", backgroundColor: color }}
+      sx={{
+        fontSize: 18,
+        fontWeight: "bold",
+        backgroundColor: color,
+        borderBottom: "4px solid black",
+      }}
       align="center"
     >
       {" "}
@@ -45,27 +50,27 @@ export default function DenseTable(props) {
       <TableContainer
         sx={{
           fontSize: "20px",
-          backgroundColor: "#616161",
+          backgroundColor: "#696969",
         }}
         component={Paper}
         className="Table"
       >
         <Typography variant="body1" component="div" gutterBottom>
           <Table size="small" aria-label="a dense table">
-            <TableHead>
-              <TableRow sx={{ backgroundColor: "#616161" }}>
+            <TableHead sx={{ borderBottom: "4px solid black" }}>
+              <TableRow sx={{ backgroundColor: "#696969" }}>
                 <TableCell
                   sx={{
                     fontSize: 18,
                     fontWeight: "bold",
-                    backgroundColor: "#616161",
+                    backgroundColor: "#696969",
                   }}
                   align="left"
                 >
                   Flight Rules
                 </TableCell>
                 <TableCell
-                  sx={{ fontSize: 18, fontWeight: "bold" }}
+                  sx={{ fontSize: 20, fontWeight: "bold" }}
                   align="left"
                 >
                   METAR/TAF
@@ -76,14 +81,18 @@ export default function DenseTable(props) {
               {props.data.map((row) => (
                 <TableRow
                   key={row.raw}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                    borderBottom: "3px solid black",
+                  }}
                 >
                   <SubHeader flightRules={row.flight_rules} />
                   <TableCell
                     sx={{
-                      fontSize: 18,
-                      fontWeight: "medium",
-                      backgroundColor: "#8e8e8e",
+                      fontSize: 17,
+                      fontWeight: "bold",
+                      backgroundColor: "#BEBEBE",
+                      padding: "14px 14px",
                     }}
                     align="left"
                   >
