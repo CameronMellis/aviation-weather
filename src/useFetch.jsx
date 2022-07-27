@@ -56,6 +56,8 @@ const getURLs = (location) => {
         "https://avwx.rest/api/taf/CYBG",
         "https://avwx.rest/api/metar/CYBC",
         "https://avwx.rest/api/taf/CYBC",
+        "https://avwx.rest/api/metar/CYYY",
+        "https://avwx.rest/api/taf/CYYY",
         "https://avwx.rest/api/metar/CYGR",
         "https://avwx.rest/api/taf/CYGR",
         "https://avwx.rest/api/metar/CYGP",
