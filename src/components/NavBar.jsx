@@ -10,10 +10,6 @@ import HelpIcon from "@mui/icons-material/Help";
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
 
-  const refreshCurrentPage = () => {
-    window.location.reload();
-  };
-
   const openInNewTab = (url) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.opener = null;
