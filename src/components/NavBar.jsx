@@ -59,11 +59,6 @@ export default function NavBar({ onSelect }) {
           }
           icon={<HelpIcon />}
         />
-        <BottomNavigationAction
-          label="Refresh"
-          onClick={() => refreshCurrentPage()}
-          icon={<AutorenewIcon />}
-        />
       </BottomNavigation>
     </Box>
   );
