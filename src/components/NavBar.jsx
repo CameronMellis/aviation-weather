@@ -2,17 +2,12 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import AutorenewIcon from "@mui/icons-material/Autorenew";
 import FlightIcon from "@mui/icons-material/Flight";
 import HelpIcon from "@mui/icons-material/Help";
 
 // eslint-disable-next-line react/prop-types
 export default function NavBar({ onSelect }) {
   const [value, setValue] = useState(0);
-
-  const refreshCurrentPage = () => {
-    window.location.reload();
-  };
 
   const openInNewTab = (url) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");

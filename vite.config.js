@@ -6,12 +6,12 @@ export default defineConfig({
   base: "/aviation-weather/",
   plugins: [react()],
   server: {
-    proxy: {
-      "/weather": {
-        target: "https://plan.navcanada.ca/weather",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/weather/, ""),
-      },
-    },
+    // proxy: {
+    //   "/weather": {
+    //     target: "https://plan.navcanada.ca/weather",
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/weather/, ""),
+    //   },
+    // },
   },
 });
