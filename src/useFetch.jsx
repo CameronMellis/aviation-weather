@@ -21,7 +21,7 @@ const getURLs = (location) => {
         `${host}:3001/weather?type=metar&ident=CYYR&location=YYT`,
         `${host}:3001/weather?type=taf&ident=CYYR&location=YYT`,
         `${host}:3001/weather?type=metar&ident=CZUM&location=YYT`,
-        `${host}:3001/weather?type=taf&ident=CYZUM&location=YYT`,
+        `${host}:3001/weather?type=taf&ident=CZUM&location=YYT`,
         `${host}:3001/weather?type=metar&ident=CYWK&location=YYT`,
         `${host}:3001/weather?type=taf&ident=CYWK&location=YYT`,
         `${host}:3001/weather?type=metar&ident=CYZV&location=YYT`,
@@ -71,7 +71,7 @@ const getURLs = (location) => {
         `${host}:3001/weather?type=metar&ident=CZUM&location=YUL`,
         `${host}:3001/weather?type=taf&ident=CZUM&location=YUL`,
         `${host}:3001/weather?type=metar&ident=CYZV&location=YUL`,
-        `${host}:3001/weather?type=taf&ident=CYZVL&location=YUL`,
+        `${host}:3001/weather?type=taf&ident=CZVL&location=YUL`,
         `${host}:3001/weather?type=metar&ident=CYKL&location=YUL`,
         `${host}:3001/weather?type=taf&ident=CYKL&location=YUL`,
       ];
@@ -113,6 +113,7 @@ const useFetch = (location) => {
           return fetch(url).then((res) => res.json());
         })
       );
+      console.log(wxdata);
       setIsLoading(false);
       setAvwx(wxdata);
     };
