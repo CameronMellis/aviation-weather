@@ -113,7 +113,6 @@ const useFetch = (location) => {
           return fetch(url).then((res) => res.json());
         })
       );
-      console.log(wxdata);
       setIsLoading(false);
       setAvwx(wxdata);
     };
