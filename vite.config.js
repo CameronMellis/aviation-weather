@@ -7,6 +7,7 @@ export default defineConfig({
   base: "/aviation-weather/",
   plugins: [react()],
   server: {
+    // Not needed anymore
     // proxy: {
     //   "/weather": {
     //     target: "https://plan.navcanada.ca/weather",
