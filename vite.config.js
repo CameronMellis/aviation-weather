@@ -8,12 +8,5 @@ export default defineConfig({
   plugins: [react()],
   server: {
     // Not needed anymore
-    // proxy: {
-    //   "/weather": {
-    //     target: "https://plan.navcanada.ca/weather",
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace(/^\/weather/, ""),
-    //   },
-    // },
   },
 });
