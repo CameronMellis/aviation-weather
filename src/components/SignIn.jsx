@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 // import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import axios from "axios";
 
 const theme = createTheme();
 
@@ -20,7 +21,15 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // if (FormData !== null) {
+    axios
+      .post("http://localhost:3001/signin", {
+        email: data.get("email"),
+        password: data.get("password"),
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
     console.log({
       email: data.get("email"),
       password: data.get("password"),
