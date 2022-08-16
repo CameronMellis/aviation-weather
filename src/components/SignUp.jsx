@@ -28,10 +28,7 @@ export default function SignUp() {
         console.log(response);
       })
       .catch((error) => console.log(error));
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    console.log("Success!");
   };
 
   return (
