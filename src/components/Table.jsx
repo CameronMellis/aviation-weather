@@ -18,7 +18,7 @@ const theme = createTheme({
 });
 
 function SubHeader({ flightRules }) {
-  let color = "#616161";
+  let color = "#181818";
   if (flightRules === "VFR") {
     color = "green";
   } else if (flightRules === "MVFR") {
@@ -32,9 +32,9 @@ function SubHeader({ flightRules }) {
     <TableCell
       sx={{
         fontSize: 18,
-        fontWeight: "bold",
+        fontWeight: "500",
         backgroundColor: color,
-        borderBottom: "4px solid black",
+        borderBottom: "1px solid black",
       }}
       align="center"
     >
@@ -50,27 +50,28 @@ export default function DenseTable(props) {
       <TableContainer
         sx={{
           fontSize: "20px",
-          backgroundColor: "#696969",
+          backgroundColor: "#181818",
         }}
         component={Paper}
         className="Table"
       >
         <Typography variant="body1" component="div" gutterBottom>
           <Table size="small" aria-label="a dense table">
-            <TableHead sx={{ borderBottom: "4px solid black" }}>
-              <TableRow sx={{ backgroundColor: "#696969" }}>
+            <TableHead sx={{ borderBottom: "1px solid gray" }}>
+              <TableRow sx={{ backgroundColor: "#181818", color: "#000000" }}>
                 <TableCell
                   sx={{
                     fontSize: 18,
-                    fontWeight: "bold",
-                    backgroundColor: "#696969",
+                    fontWeight: "500",
+                    backgroundColor: "#181818",
+                    color: "white",
                   }}
-                  align="left"
+                  align="center"
                 >
                   Flight Rules
                 </TableCell>
                 <TableCell
-                  sx={{ fontSize: 20, fontWeight: "bold" }}
+                  sx={{ fontSize: 18, fontWeight: "500", color: "white" }}
                   align="left"
                 >
                   METAR/TAF
@@ -83,16 +84,17 @@ export default function DenseTable(props) {
                   key={row.raw}
                   sx={{
                     "&:last-child td, &:last-child th": { border: 0 },
-                    borderBottom: "3px solid black",
+                    borderBottom: "1px solid black",
                   }}
                 >
                   <SubHeader flightRules={row.flight_rules} />
                   <TableCell
                     sx={{
-                      fontSize: 17,
-                      fontWeight: "bold",
-                      backgroundColor: "#BEBEBE",
-                      padding: "14px 14px",
+                      fontSize: 16,
+                      fontWeight: "400",
+                      backgroundColor: "#282828",
+                      color: "white",
+                      padding: "20px 14px",
                     }}
                     align="left"
                   >

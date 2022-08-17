@@ -41,7 +41,7 @@ export default function Graphic({ location }) {
         <Button
           sx={{ m: 1, ml: 15, mr: 3, width: 160 }}
           className="Buttons"
-          variant="contained"
+          variant="outlined"
           size="small"
           onClick={() => {
             setTime("000");
@@ -52,7 +52,7 @@ export default function Graphic({ location }) {
         <Button
           sx={{ m: 1, mr: 3, width: 160 }}
           className="Buttons"
-          variant="contained"
+          variant="outlined"
           size="small"
           onClick={() => {
             setTime("006");
@@ -63,7 +63,7 @@ export default function Graphic({ location }) {
         <Button
           sx={{ m: 1, width: 160 }}
           className="Buttons"
-          variant="contained"
+          variant="outlined"
           size="small"
           onClick={() => {
             setTime("012");
