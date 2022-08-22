@@ -11,7 +11,7 @@ import Paper from "@mui/material/Paper";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-const theme = createTheme({
+const darkTheme = createTheme({
   palette: {
     type: "dark",
   },
@@ -46,7 +46,7 @@ function SubHeader({ flightRules }) {
 
 export default function DenseTable(props) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       <TableContainer
         sx={{
           fontSize: "20px",
