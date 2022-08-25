@@ -32,7 +32,7 @@ export default function SignUp() {
         console.log(response);
       })
       .catch((error) => console.log(error));
-    console.log("Success!");
+    console.log("Users already exists!");
   };
 
   return (
