@@ -14,6 +14,7 @@ import Container from "@mui/material/Container";
 // import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,6 +23,7 @@ const darkTheme = createTheme({
 });
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -31,10 +33,12 @@ export default function SignIn() {
         password: data.get("password"),
       })
       .then((response) => {
-        console.log(response);
+        if (response.data === "Success") {
+          console.log(response);
+          navigate("/");
+        }
       })
       .catch((error) => console.log(error));
-    console.log("Success!");
   };
 
   return (
