@@ -107,10 +107,14 @@ const useFetch = (location) => {
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
+      const headers = {
+        authorization: localStorage.getItem("token"),
+      };
+      console.log(headers);
       const urls = getURLs(location);
       const wxdata = await Promise.all(
         urls.map((url) => {
-          return fetch(url).then((res) => res.json());
+          return fetch(url, { headers }).then((res) => res.json());
         })
       );
       setIsLoading(false);

@@ -14,6 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,6 +23,7 @@ const darkTheme = createTheme({
 });
 
 export default function SignIn() {
+  const [error, setError] = React.useState(false);
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,12 +34,16 @@ export default function SignIn() {
         password: data.get("password"),
       })
       .then((response) => {
-        if (response.data === "Success") {
+        if (response.status === 200) {
           console.log(response);
+          localStorage.setItem("token", response.data.token);
           navigate("/");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((er) => {
+        console.log(er);
+        setError(true);
+      });
   };
 
   return (
@@ -58,7 +64,9 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          {/* <Alert severity="error">Invalid email and/or password</Alert> */}
+          {error ? (
+            <Alert severity="error">Invalid email and/or password</Alert>
+          ) : null}
           <Box
             component="form"
             onSubmit={handleSubmit}
