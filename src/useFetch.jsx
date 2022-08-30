@@ -110,7 +110,6 @@ const useFetch = (location) => {
       const headers = {
         authorization: localStorage.getItem("token"),
       };
-      console.log(headers);
       const urls = getURLs(location);
       const wxdata = await Promise.all(
         urls.map((url) => {
