@@ -13,6 +13,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 
 const darkTheme = createTheme({
   palette: {
@@ -21,6 +22,7 @@ const darkTheme = createTheme({
 });
 
 export default function SignUp() {
+  const [error, setError] = React.useState(false);
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,7 +38,7 @@ export default function SignUp() {
           navigate("/signin");
         }
       })
-      .catch((error) => console.warn(error));
+      .catch((er) => console.warn(er), setError(true));
   };
 
   return (
@@ -57,6 +59,9 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
+          {error ? (
+            <Alert severity="error">Invalid email and/or password</Alert>
+          ) : null}
           <Box
             component="form"
             noValidate
