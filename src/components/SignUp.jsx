@@ -34,7 +34,6 @@ export default function SignUp() {
       })
       .then((response) => {
         if (response.data === "Success") {
-          console.log(response.data);
           navigate("/signin");
         }
       })

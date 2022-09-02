@@ -35,7 +35,6 @@ export default function SignIn() {
       })
       .then((response) => {
         if (response.status === 200) {
-          console.log(response);
           localStorage.setItem("token", response.data.token);
           navigate("/");
         }
