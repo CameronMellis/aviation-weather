@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const host = "http://localhost";
+const host = "https://localhost";
 
 const getURLs = (location) => {
   switch (location) {
