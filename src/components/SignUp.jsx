@@ -28,7 +28,7 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     axios
-      .post("http://localhost:3001/signup", {
+      .post("https://localhost:3001/signup", {
         email: data.get("email"),
         password: data.get("password"),
       })
@@ -101,7 +101,7 @@ export default function SignUp() {
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link
-                  href="http://localhost:3000/aviation-weather/signin"
+                  href="https://localhost:3000/aviation-weather/signin"
                   variant="body2"
                 >
                   Already have an account? Sign in

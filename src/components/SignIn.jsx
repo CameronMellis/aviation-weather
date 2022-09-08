@@ -29,7 +29,7 @@ export default function SignIn() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     axios
-      .post("http://localhost:3001/signin", {
+      .post("https://localhost:3001/signin", {
         email: data.get("email"),
         password: data.get("password"),
       })
@@ -103,7 +103,7 @@ export default function SignIn() {
             <Grid container>
               <Grid item>
                 <Link
-                  href="http://localhost:3000/aviation-weather/signup"
+                  href="https://localhost:3000/aviation-weather/signup"
                   variant="body2"
                 >
                   Don't have an account? Sign Up
