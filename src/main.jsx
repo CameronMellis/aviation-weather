@@ -8,7 +8,7 @@ import SignUp from "./components/SignUp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/aviation-weather">
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/signin" element={<SignIn />} />
