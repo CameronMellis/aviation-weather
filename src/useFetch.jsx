@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const host = "https://localhost";
 
@@ -102,6 +103,7 @@ const getURLs = (location) => {
 };
 
 const useFetch = (location) => {
+  const navigate = useNavigate(Navigate);
   const [avwx, setAvwx] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -111,13 +113,17 @@ const useFetch = (location) => {
         authorization: localStorage.getItem("token"),
       };
       const urls = getURLs(location);
-      const wxdata = await Promise.all(
-        urls.map((url) => {
-          return fetch(url, { headers }).then((res) => res.json());
-        })
-      );
-      setIsLoading(false);
-      setAvwx(wxdata);
+      try {
+        const wxdata = await Promise.all(
+          urls.map((url) => {
+            return fetch(url, { headers }).then((res) => res.json());
+          })
+        );
+        setIsLoading(false);
+        setAvwx(wxdata);
+      } catch (err) {
+        navigate("/signin");
+      }
     };
     getData();
   }, [location]);

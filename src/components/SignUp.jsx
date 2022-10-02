@@ -28,7 +28,7 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     axios
-      .post("https://localhost:3001/signup", {
+      .post("https://localhost:3000/api/signup", {
         email: data.get("email"),
         password: data.get("password"),
       })
