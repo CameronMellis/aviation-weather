@@ -29,14 +29,14 @@ export default function SignIn() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     axios
-      .post("https://localhost:3000/api/signin", {
+      .post(process.env.REACT_APP_SIGNIN_URL, {
         email: data.get("email"),
         password: data.get("password"),
       })
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem("token", response.data.token);
-          navigate("/");
+          navigate(process.env.REACT_APP_BASE_URL);
         }
       })
       .catch((er) => {
@@ -102,10 +102,7 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item>
-                <Link
-                  href="https://localhost:3000/aviation-weather/signup"
-                  variant="body2"
-                >
+                <Link href={process.env.REACT_APP_SIGNUP_URL} variant="body2">
                   Don't have an account? Sign Up
                 </Link>
               </Grid>

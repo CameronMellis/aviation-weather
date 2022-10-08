@@ -9,7 +9,7 @@ import "./App.css";
 import useFetch from "./useFetch";
 import LoadingSpinner from "./components/LoadingSpinner";
 
-const Theme = createTheme({
+const darkTheme = createTheme({
   palette: {
     mode: "dark",
   },
@@ -22,7 +22,7 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={darkTheme}>
       <Grid sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
         <div className="App">
           {isLoading ? (
