@@ -28,7 +28,7 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     axios
-      .post("/api/signup", {
+      .post("https://intense-forest-71090.herokuapp.com/api/signup", {
         email: data.get("email"),
         password: data.get("password"),
       })
