@@ -122,7 +122,7 @@ const useFetch = (location) => {
         setIsLoading(false);
         setAvwx(wxdata);
       } catch (err) {
-        navigate("https://intense-forest-71090.herokuapp.com/signin");
+        navigate("/signin");
       }
     };
     getData();

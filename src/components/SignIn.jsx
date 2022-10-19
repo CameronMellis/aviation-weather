@@ -36,7 +36,7 @@ export default function SignIn() {
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem("token", response.data.token);
-          navigate("https://intense-forest-71090.herokuapp.com/signin");
+          navigate("/signin");
         }
       })
       .catch((er) => {
