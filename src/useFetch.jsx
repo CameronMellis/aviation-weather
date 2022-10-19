@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const host = process.env.REACT_APP_BASE_URL;
+const host = "https://intense-forest-71090.herokuapp.com"
 
 const getURLs = (location) => {
   switch (location) {
