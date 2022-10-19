@@ -102,7 +102,10 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href={process.env.REACT_APP_SIGNUP_URL} variant="body2">
+                <Link
+                  href="https://intense-forest-71090.herokuapp.com/signup"
+                  variant="body2"
+                >
                   Don't have an account? Sign Up
                 </Link>
               </Grid>

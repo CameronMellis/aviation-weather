@@ -28,13 +28,13 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     axios
-      .post(process.env.REACT_APP_SIGNUP_URL, {
+      .post("/api/signup", {
         email: data.get("email"),
         password: data.get("password"),
       })
       .then((response) => {
         if (response.data === "Success") {
-          navigate(process.env.REACT_APP_SIGNIN_URL);
+          navigate("/signin");
         }
       })
       .catch((er) => console.warn(er), setError(true));
