@@ -122,7 +122,7 @@ const useFetch = (location) => {
         setIsLoading(false);
         setAvwx(wxdata);
       } catch (err) {
-        navigate("/signin");
+        navigate("/signup");
       }
     };
     getData();
